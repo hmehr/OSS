@@ -1,0 +1,1 @@
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.UpdateHandler\bin\Debug\MLifterUpdateHandler.exe.config

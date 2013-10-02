@@ -1,0 +1,2 @@
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.SettingsManager\bin\Debug\MLifter.SettingsManager.exe.config
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.SettingsManager\obj\Debug\MLifter.SettingsManager.csproj.ResolveComReference.cache

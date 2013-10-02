@@ -1,0 +1,45 @@
+/***************************************************************************************************************************************
+ * Copyright (C) 2001-2012 LearnLift USA / LumiSoft															*
+ * Contact: Learnlift USA, 12 Greenway Plaza, Suite 1510, Houston, Texas 77046, support@memorylifter.com					*
+ *																								*
+ * This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License	*
+ * as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.			*
+ *																								*
+ * This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty	*
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.	*
+ *																								*
+ * You should have received a copy of the GNU Lesser General Public License along with this library; if not,					*
+ * write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA					*
+ ***************************************************************************************************************************************/
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace LumiSoft.Media.Wave.Native
+{
+    /// <summary>
+    /// This class provides most used wav constants.
+    /// </summary>
+    internal class WavConstants
+    {
+        public const int MM_WOM_OPEN = 0x3BB;
+		public const int MM_WOM_CLOSE = 0x3BC;
+		public const int MM_WOM_DONE = 0x3BD;
+
+        public const int MM_WIM_OPEN = 0x3BE;   
+        public const int MM_WIM_CLOSE = 0x3BF;
+        public const int MM_WIM_DATA = 0x3C0;
+
+
+		public const int CALLBACK_FUNCTION = 0x00030000;
+
+        public const int WAVERR_STILLPLAYING = 0x21;
+
+        public const int WHDR_DONE = 0x00000001;
+        public const int WHDR_PREPARED = 0x00000002;
+        public const int WHDR_BEGINLOOP = 0x00000004;
+        public const int WHDR_ENDLOOP = 0x00000008;
+        public const int WHDR_INQUEUE = 0x00000010;
+
+    }
+}
