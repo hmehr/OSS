@@ -1,0 +1,22 @@
+The bug describes a situation where in text mode questions ( versus other modes likes multiple-choice questions)
+when user enters a word with certain accented characters like é, è, etc. are considered as wrong answer.
+The system contains a menu in its setting where user can enter certain characters that will be ignored when typing.
+These characters include "/\]['; among others. The person who suggested this bug expected that user adds  accented characters
+in the list of ignored characters, consequently they somehow are precluded when the system is generating the answer.
+After carefully examining the situation we decided that this is not an acceptable requirement. There are certain aftermaths 
+if we let users add accented characters to the list of ignored characters. One problem is that the user cannot simply add the original character
+and expect the system magically ignore it. It should be replaceable with another character. That replaced character should also be included.
+Instead of following this approach we decided to include a set of character map in the code. The character map contains a list of characters
+and their corresponding characters that need to be replaced with them. For example è should be replaced with e.
+The other problem is that from user point of view, this is something obvious that the system needs to take care of vs when the user has
+to explicitly enter these characters in the setting, thus the usability of the system will degrade.
+Another problem is that user will be able to intercept answers simply by providing a set of replaceable characters in the setting.
+For example they could have all the 'a' characters be replaceable by an empty string. This is undesired.
+
+To fix this bug we examined the code using Visual Studio debugging tools to find out the involved classes and methods.
+One of the useful tools to visualize the order of called methods in Visual Studio is Code Map. Using this tool we will 
+have a visual mapping of all the methods that are being called, the messages and the flow of the code.
+We initially detected a Card class in business layer where the list of ignored characters are examined and removed from the answer.
+We decided that the right place to replace the accented character is the textbox component where all sort of textual analysis is being done.
+The textbox class is called MLifterTextBox which extends the standard windows form textbox. We added an extension method for string class
+that replaces accented characters with their corresponding characters. For example it replaces è with e.
