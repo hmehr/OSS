@@ -1,0 +1,50 @@
+ .../Main/MLifter.Components/MLifterTextBox.cs      | 29 +++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+
+diff --git a/MemoryLifter/Main/MLifter.Components/MLifterTextBox.cs b/MemoryLifter/Main/MLifter.Components/MLifterTextBox.cs
+index 9c04996..635b521 100644
+--- a/MemoryLifter/Main/MLifter.Components/MLifterTextBox.cs
++++ b/MemoryLifter/Main/MLifter.Components/MLifterTextBox.cs
+@@ -397,7 +397,7 @@ namespace MLifter.Components
+             {
+                 string strg = CaseSensitive ? str.Trim() : str.ToLower().Trim();
+                 strg = RemoveIgnoreChars(strg);
+-                
++                strg = strg.ReplaceIgnoreCharacter();
+                 if (openSynonyms.Contains(strg))
+                 {
+                     CorrectSynonyms++;
+@@ -769,6 +769,33 @@ namespace MLifter.Components
+ 
+     }
+ 
++    public static class IgnoredChar
++    {
++
++
++        static Dictionary<string, string> IgnoreChars
++        {
++            get
++            {
++                return new Dictionary<string, string> { { "é", "e" }, { "è", "e" }, { "ê", "e" } };
++            }
++        }
++
++        public static string ReplaceIgnoreCharacter(this string input)
++        {
++            var replacedAnswer = input;
++            foreach (var ignoreChar in IgnoreChars.Keys)
++            {
++                if (input.Contains(ignoreChar))
++                    replacedAnswer = input.Replace(ignoreChar, IgnoreChars[ignoreChar]);
++            }
++
++            return replacedAnswer;
++        }
++
++
++    }
++
+ 
+     
+ }
