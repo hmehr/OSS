@@ -1,0 +1,15 @@
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\MLifter.Generics.dll.config
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\MLifter.Generics.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\MLifter.Generics.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\Esent.Collections.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\Esent.Interop.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\MySql.Data.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\Esent.Collections.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\Esent.Collections.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\Esent.Interop.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\Esent.Interop.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\obj\Debug\MLifter.Generics.csprojResolveAssemblyReference.cache
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\obj\Debug\MLifter.Generics.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\obj\Debug\MLifter.Generics.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\MLifter.Generics.dll.CodeAnalysisLog.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Generics\bin\Debug\MLifter.Generics.dll.lastcodeanalysissucceeded

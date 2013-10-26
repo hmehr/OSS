@@ -1,0 +1,6 @@
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.UpdateService\bin\MLifter.UpdateService.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.UpdateService\bin\MLifter.UpdateService.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.UpdateService\obj\Debug\MLifter.UpdateService.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.UpdateService\obj\Debug\MLifter.UpdateService.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.UpdateService\bin\MLifter.UpdateService.dll.CodeAnalysisLog.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.UpdateService\bin\MLifter.UpdateService.dll.lastcodeanalysissucceeded

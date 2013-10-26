@@ -1,0 +1,1427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\StickFactory.exe">
+   <Modules>
+    <Module Name="stickfactory.exe">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'StickFactory.exe' with a strong name key.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'StickFactory.exe' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Warning">Because assembly 'StickFactory.exe' contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="StickFactory">
+       <Types>
+        <Type Name="DetectorForm" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="90">Method 'DetectorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "This is invisible form. To see DriveDetector code click View Code".</Issue>
+            </Message>
+            <Message Id="DriveDetector" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="90">Correct the spelling of the unrecognized token 'DriveDetector' in the literal '"This is invisible form. To see DriveDetector code click View Code"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DriveDetector" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="169">In method 'DriveDetector.DriveDetector()', call System.IDisposable.Dispose on object 'frm' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#.ctor(System.Windows.Forms.Control)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="472">'DriveDetector.DriveDetector(Control)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#.ctor(System.Windows.Forms.Control,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="472">'DriveDetector.DriveDetector(Control, string)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DisableQueryRemove()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="295">'DriveDetector.DisableQueryRemove()' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DisposableTypesShouldDeclareFinalizer" Category="Microsoft.Usage" CheckId="CA2216" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="50" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="308">Implement a finalizer or destructor on 'DriveDetector'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EnableQueryRemove(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="265">'DriveDetector.EnableQueryRemove(string)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#HookedDrive" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_HookedDrive()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="235">'DriveDetector.HookedDrive.get()' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#IsQueryHooked" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_IsQueryHooked()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="220">'DriveDetector.IsQueryHooked.get()' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#mDeviceNotifyHandle" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="UseSafeHandleToEncapsulateNativeResources" Category="Microsoft.Reliability" CheckId="CA2006" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="CriticalWarning">Review usage of 'DriveDetector.mDeviceNotifyHandle' (a 'IntPtr' instance) to determine whether it should be replaced with a SafeHandle or CriticalHandle.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OpenedFile" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_OpenedFile()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="248">'DriveDetector.OpenedFile.get()' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#RegisterForDeviceChange(System.Boolean,Microsoft.Win32.SafeHandles.SafeFileHandle)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Runtime.InteropServices.SafeHandle.DangerousGetHandle" TypeName="AvoidCallingProblematicMethods" Category="Microsoft.Reliability" CheckId="CA2001" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="System.Runtime.InteropServices.SafeHandle.DangerousGetHandle" Certainty="75" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="631">Remove the call to SafeHandle.DangerousGetHandle from 'DriveDetector.RegisterForDeviceChange(bool, SafeFileHandle)'.</Issue>
+            </Message>
+            <Message Id="StickFactory.DriveDetector+Native.UnregisterDeviceNotification(System.IntPtr)" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="HResultOrErrorCode" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="652">'DriveDetector.RegisterForDeviceChange(bool, SafeFileHandle)' calls 'DriveDetector.Native.UnregisterDeviceNotification(IntPtr)' but does not use the HRESULT or error code that the method returns. This could lead to unexpected behavior in error conditions or low-resource situations. Use the result in a conditional statement, assign the result to a variable, or pass it as an argument to another method.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RegisterQuery(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveDetectorForm.cs" Line="554">Modify 'DriveDetector.RegisterQuery(string)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DriveDetector+Native" Kind="Class" Accessibility="Private" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'DriveDetector.Native' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#CloseHandle(System.IntPtr)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Name="Return" Certainty="95" Level="Warning">Add the MarshalAsAttribute to the return type of P/Invoke 'DriveDetector.Native.CloseHandle(IntPtr)'. If the corresponding unmanaged return type is a 4-byte Win32 'BOOL', use MarshalAs(UnmanagedType.Bool). For a 1-byte C++ 'bool', use MarshalAs(UnmanagedType.U1).</Issue>
+            </Message>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'DriveDetector.Native.CloseHandle(IntPtr)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreateFile(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'DriveDetector.Native.CreateFile(string, uint, uint, uint, uint, uint, int)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+            <Message Id="3" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'SecurityAttributes' of P/Invoke 'DriveDetector.Native.CreateFile(string, uint, uint, uint, uint, uint, int)' will be 4 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 8 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'uint'.</Issue>
+            </Message>
+            <Message Id="6" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'hTemplateFile' of P/Invoke 'DriveDetector.Native.CreateFile(string, uint, uint, uint, uint, uint, int)' will be 4 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 8 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'int'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'FileName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RegisterDeviceNotification(System.IntPtr,System.IntPtr,System.UInt32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'DriveDetector.Native.RegisterDeviceNotification(IntPtr, IntPtr, uint)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UnregisterDeviceNotification(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'DriveDetector.Native.UnregisterDeviceNotification(IntPtr)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DriveDetectorEventArgs" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Cancel" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'DriveDetectorEventArgs.Cancel' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Drive" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'DriveDetectorEventArgs.Drive' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#HookQueryRemove" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'DriveDetectorEventArgs.HookQueryRemove' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DriveDetectorEventHandler" Kind="Delegate" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="UseGenericEventHandlerInstances" Category="Microsoft.Design" CheckId="CA1003" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+           <Issue Certainty="95" Level="Error">Remove 'DriveDetectorEventHandler' and replace its usage with EventHandler&lt;T&gt;</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="DriveStatusControl" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Drive" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Drive(System.Char)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+               <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.cs" Line="29">Method 'DriveStatusControl.Drive.set(char)' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: ":".</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.Designer.cs" Line="60">Method 'DriveStatusControl.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "C:".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.Designer.cs" Line="84">Method 'DriveStatusControl.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Content written".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.Designer.cs" Line="72">Method 'DriveStatusControl.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Formatting finish".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.Designer.cs" Line="96">Method 'DriveStatusControl.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "ID set".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.Designer.cs" Line="107">Method 'DriveStatusControl.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Waiting for Stick...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.Designer.cs" Line="127">Method 'DriveStatusControl.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "~MM:SS left".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#lastUpdate" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'DriveStatusControl.lastUpdate' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OverridedBackColor" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Overrided" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.cs" Line="93">Correct the spelling of 'Overrided' in member name 'DriveStatusControl.OverridedBackColor' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#progress" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'DriveStatusControl.progress' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ProgressChanged()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.cs" Line="135">Method 'DriveStatusControl.ProgressChanged()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "~, :,  left".</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.cs" Line="135">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'DriveStatusControl.ProgressChanged()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Set(System.Char)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="DriveStatusControl.cs" Line="74">Method 'DriveStatusControl.Set(char)' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: ":".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ImageCreatorForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#buttonBrowse_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="58">In method 'ImageCreatorForm.buttonBrowse_Click(object, EventArgs)', call System.IDisposable.Dispose on object 'fbd' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#buttonBrowseOutput_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="74">In method 'ImageCreatorForm.buttonBrowseOutput_Click(object, EventArgs)', call System.IDisposable.Dispose on object 'sfd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.FileDialog.set_Filter(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="75">Method 'ImageCreatorForm.buttonBrowseOutput_Click(object, EventArgs)' passes a literal string as parameter 'value' of a call to 'FileDialog.Filter.set(string)'. Retrieve the following string(s) from a resource table instead: "MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick".</Issue>
+            </Message>
+            <Message Id="MLifterStick" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="75">Correct the spelling of the unrecognized token 'MLifterStick' in the literal '"MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="75">Correct the spelling of the unrecognized token 'MLifterStick' in the literal '"MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick"'.</Issue>
+            </Message>
+            <Message Id="MemoryLifter" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="75">Correct the spelling of the unrecognized token 'MemoryLifter' in the literal '"MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#buttonCreate_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="106">Method 'ImageCreatorForm.buttonCreate_Click(object, EventArgs)' passes a literal string as parameter 'caption' of a call to 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Retrieve the following string(s) from a resource table instead: "Error creating the image".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="106">Method 'ImageCreatorForm.buttonCreate_Click(object, EventArgs)' passes a literal string as parameter 'text' of a call to 'MessageBox.Show(string, string, MessageBoxButtons, MessageBoxIcon)'. Retrieve the following string(s) from a resource table instead: "There was an Error creating the image:\n\r".</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="104">Modify 'ImageCreatorForm.buttonCreate_Click(object, EventArgs)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="106">Change 'ImageCreatorForm.buttonCreate_Click(object, EventArgs)' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GenerateImage()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="134">In method 'ImageCreatorForm.GenerateImage()', object 'output' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'output' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.ToolStripItem.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="149">Method 'ImageCreatorForm.GenerateImage()' passes a literal string as parameter 'value' of a call to 'ToolStripItem.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Adding file ,  of , ...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="167">Method 'ImageCreatorForm.GenerateImage()' passes a literal string as parameter 'value' of a call to 'ToolStripItem.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Saving image. THIS COULD RUN VERY LONG - PLEASE WAIT!".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="190">Method 'ImageCreatorForm.GenerateImage()' passes a literal string as parameter 'value' of a call to 'ToolStripItem.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Setting file FileAttributes to: , /".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="197">Method 'ImageCreatorForm.GenerateImage()' passes a literal string as parameter 'value' of a call to 'ToolStripItem.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Setting folder FileAttributes to: ".</Issue>
+            </Message>
+            <Message Id="FileAttributes" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="190">Correct the spelling of the unrecognized token 'FileAttributes' in the literal '"Setting file FileAttributes to: "'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="197">Correct the spelling of the unrecognized token 'FileAttributes' in the literal '"Setting folder FileAttributes to: "'.</Issue>
+            </Message>
+            <Message Id="zipStream" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="135">'ImageCreatorForm.GenerateImage()' declares a variable, 'zipStream', of type 'ZipOutputStream', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="149">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'ImageCreatorForm.GenerateImage()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="181">Because the behavior of 'string.StartsWith(string)' could vary based on the current user's locale settings, replace this call in 'ImageCreatorForm.GenerateImage()' with a call to 'string.StartsWith(string, StringComparison)'. If the result of 'string.StartsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.cs" Line="123">Replace the call to 'string.operator ==(string, string)' in 'ImageCreatorForm.GenerateImage()' with a call to 'String.IsNullOrEmpty'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="91">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Browse...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="213">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Browse...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="186">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Cancel".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="175">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Create Image...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="275">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Create new Stick image...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="126">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Image Settings".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="81">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Input".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="203">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Output".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="234">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Select a file to store the image:".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="112">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Select a folder:".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="145">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Stick ID:".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="165">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Stick Name:".</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.ToolStripItem.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="ImageCreatorForm.Designer.cs" Line="252">Method 'ImageCreatorForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'ToolStripItem.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Ready...".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MainForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="75">In method 'MainForm.MainForm()', object 'ctl' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'ctl' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="84">Method 'MainForm.MainForm()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: " V".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#buttonBrowse_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="584">In method 'MainForm.buttonBrowse_Click(object, EventArgs)', call System.IDisposable.Dispose on object 'dialog' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.FileDialog.set_Filter(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="585">Method 'MainForm.buttonBrowse_Click(object, EventArgs)' passes a literal string as parameter 'value' of a call to 'FileDialog.Filter.set(string)'. Retrieve the following string(s) from a resource table instead: "MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick".</Issue>
+            </Message>
+            <Message Id="MLifterStick" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="585">Correct the spelling of the unrecognized token 'MLifterStick' in the literal '"MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick"'.</Issue>
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="585">Correct the spelling of the unrecognized token 'MLifterStick' in the literal '"MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick"'.</Issue>
+            </Message>
+            <Message Id="MemoryLifter" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="585">Correct the spelling of the unrecognized token 'MemoryLifter' in the literal '"MemoryLifter Stick Archive (*.MLifterStick)|*.MLifterStick"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#buttonCreateImage_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="592">In method 'MainForm.buttonCreateImage_Click(object, EventArgs)', call System.IDisposable.Dispose on object 'icf' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CopyIntoArray(System.Byte[],System.Int32,System.Byte[],System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="472">The 'this' parameter (or 'Me' in Visual Basic) of 'MainForm.CopyIntoArray(byte[], int, byte[], int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="usbDetector" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="28">'MainForm' contains field 'MainForm.usbDetector' that is of IDisposable type: 'DriveDetector'. Change the Dispose method on 'MainForm' to call Dispose or Close on this field.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitializeComponent()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="98">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Browse...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="86">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Create new Stick-Image...".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="76">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Input".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="182">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Ready".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="121">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Select an input file:".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="193">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Start checking engine".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="169">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Start copy engine".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="135">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Stick Factory".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="256">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "StickFactory".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="205">Method 'MainForm.InitializeComponent()' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "USB ejection delay in s:".</Issue>
+            </Message>
+            <Message Id="StickFactory" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.Designer.cs" Line="256">Correct the spelling of the unrecognized token 'StickFactory' in the literal '"StickFactory"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadingProcessThread()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="419">In method 'MainForm.LoadingProcessThread()', object 'File.OpenRead(this.textBoxInputFilePath.Text)' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'File.OpenRead(this.textBoxInputFilePath.Text)' before all references to it are out of scope.</Issue>
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="418">In method 'MainForm.LoadingProcessThread()', object 'zipFile' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'zipFile' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="425">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MainForm.LoadingProcessThread()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="438">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'MainForm.LoadingProcessThread()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="462">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'MainForm.LoadingProcessThread()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MainForm_mainThreadLoadingFinished(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="509">Method 'MainForm.MainForm_mainThreadLoadingFinished(object, EventArgs)' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Finished loading ZIP-File into memory.".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveDeviceFromList(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="363">Because the behavior of 'string.StartsWith(string)' could vary based on the current user's locale settings, replace this call in 'MainForm.RemoveDeviceFromList(string)' with a call to 'string.StartsWith(string, StringComparison)'. If the result of 'string.StartsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StartProcess(System.Boolean)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="252">In method 'MainForm.StartProcess(bool)', object 'zipFile' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'zipFile' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="287">Method 'MainForm.StartProcess(bool)' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Start checking engine".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="289">Method 'MainForm.StartProcess(bool)' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Start copy engine".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="257">Method 'MainForm.StartProcess(bool)' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Stop checking engine".</Issue>
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="259">Method 'MainForm.StartProcess(bool)' passes a literal string as parameter 'value' of a call to 'Control.Text.set(string)'. Retrieve the following string(s) from a resource table instead: "Stop copy engine".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#usbDetector_QueryRemove(System.Object,StickFactory.DriveDetectorEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="StickFactory.MainForm.ChangeDeviceTextFromList(System.Char,System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="347">Method 'MainForm.usbDetector_QueryRemove(object, DriveDetectorEventArgs)' passes a literal string as parameter 'message' of a call to 'MainForm.ChangeDeviceTextFromList(char, string)'. Retrieve the following string(s) from a resource table instead: "Unmounting...".</Issue>
+            </Message>
+            <Message Id="Unmounting" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="347">Correct the spelling of the unrecognized token 'Unmounting' in the literal '"Unmounting..."'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#usbStickWriter_UsbStickWriteAbort(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="StickFactory.MainForm.ChangeDeviceTextFromList(System.Char,System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="98">Method 'MainForm.usbStickWriter_UsbStickWriteAbort(object, EventArgs)' passes a literal string as parameter 'message' of a call to 'MainForm.ChangeDeviceTextFromList(char, string)'. Retrieve the following string(s) from a resource table instead: "Aborted by user.".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#usbStickWriter_UsbStickWriteBegin(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="StickFactory.MainForm.ChangeDeviceTextFromList(System.Char,System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="121">Method 'MainForm.usbStickWriter_UsbStickWriteBegin(object, EventArgs)' passes a literal string as parameter 'message' of a call to 'MainForm.ChangeDeviceTextFromList(char, string)'. Retrieve the following string(s) from a resource table instead: "Checking, Writing,  files on Stick...".</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="121">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'MainForm.usbStickWriter_UsbStickWriteBegin(object, EventArgs)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#usbStickWriter_UsbStickWriteError(System.Object,StickFactory.UsbStickWriteMessageEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="StickFactory.MainForm.ChangeDeviceTextFromList(System.Char,System.String,System.Drawing.Color)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="145">Method 'MainForm.usbStickWriter_UsbStickWriteError(object, UsbStickWriteMessageEventArgs)' passes a literal string as parameter 'message' of a call to 'MainForm.ChangeDeviceTextFromList(char, string, Color)'. Retrieve the following string(s) from a resource table instead: "Error: ".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#usbStickWriter_UsbStickWriteFinish(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="StickFactory.MainForm.ChangeDeviceTextFromList(System.Char,System.String)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="135">Method 'MainForm.usbStickWriter_UsbStickWriteFinish(object, EventArgs)' passes a literal string as parameter 'message' of a call to 'MainForm.ChangeDeviceTextFromList(char, string)'. Retrieve the following string(s) from a resource table instead: "Finished.".</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#usbStickWriter_UsbStickWriteProcess(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="StickFactory.MainForm.ChangeDeviceTextFromList(System.Char,System.String,System.Double,System.Int32,System.Int32)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="109">Method 'MainForm.usbStickWriter_UsbStickWriteProcess(object, EventArgs)' passes a literal string as parameter 'message' of a call to 'MainForm.ChangeDeviceTextFromList(char, string, double, int, int)'. Retrieve the following string(s) from a resource table instead: "Processing file ,  of , .".</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="MainForm.cs" Line="109">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'MainForm.usbStickWriter_UsbStickWriteProcess(object, EventArgs)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#zipFileAttributes" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'MainForm.zipFileAttributes' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;FileAttributes&gt;' in 'MainForm.zipFileAttributes' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#zipFileContentList" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'MainForm.zipFileContentList' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;byte[]&gt;' in 'MainForm.zipFileContentList' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#zipFilenames" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Filenames" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error">The discrete term 'Filenames' in member name 'MainForm.zipFilenames' should be expressed as a compound word, 'FileNames'.</Issue>
+            </Message>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'MainForm.zipFilenames' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;string&gt;' in 'MainForm.zipFilenames' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#zipFileSizes" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'MainForm.zipFileSizes' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;long&gt;' in 'MainForm.zipFileSizes' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#zipFileType" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'MainForm.zipFileType' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;MainForm.FileDirType&gt;' in 'MainForm.zipFileType' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MainForm+FileDirType" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Dir" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Dir' in type name 'MainForm.FileDirType'.</Issue>
+          </Message>
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+           <Issue Certainty="90" Level="Error">Do not nest type 'MainForm.FileDirType'. Alternatively, change its accessibility so that it is not externally visible.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="Program" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Main()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="Program.cs" Line="36">Change 'Program.Main()' to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SerializableDictionary`2" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+           <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to SerializableDictionary with the following signature: 'protected SerializableDictionary(SerializationInfo info, StreamingContext context)'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#GetFromInvariantString(System.Type,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="237">The 'this' parameter (or 'Me' in Visual Basic) of 'SerializableDictionary&lt;TKey, TValue&gt;.GetFromInvariantString(Type, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetInvariantString(System.Type,System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="329">The 'this' parameter (or 'Me' in Visual Basic) of 'SerializableDictionary&lt;TKey, TValue&gt;.GetInvariantString(Type, object)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetValue(System.Type,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToBoolean(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="135">Because the behavior of 'Convert.ToBoolean(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToBoolean(string, IFormatProvider)'. If the result of 'Convert.ToBoolean(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToByte(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="205">Because the behavior of 'Convert.ToByte(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToByte(string, IFormatProvider)'. If the result of 'Convert.ToByte(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToChar(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="201">Because the behavior of 'Convert.ToChar(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToChar(string, IFormatProvider)'. If the result of 'Convert.ToChar(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToDecimal(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="197">Because the behavior of 'Convert.ToDecimal(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToDecimal(string, IFormatProvider)'. If the result of 'Convert.ToDecimal(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToDouble(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="193">Because the behavior of 'Convert.ToDouble(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToDouble(string, IFormatProvider)'. If the result of 'Convert.ToDouble(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt16(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="177">Because the behavior of 'Convert.ToInt16(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToInt16(string, IFormatProvider)'. If the result of 'Convert.ToInt16(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="147">Because the behavior of 'Convert.ToInt32(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToInt32(string, IFormatProvider)'. If the result of 'Convert.ToInt32(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="147">Because the behavior of 'Convert.ToInt32(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToInt32(string, IFormatProvider)'. If the result of 'Convert.ToInt32(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="147">Because the behavior of 'Convert.ToInt32(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToInt32(string, IFormatProvider)'. If the result of 'Convert.ToInt32(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="147">Because the behavior of 'Convert.ToInt32(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToInt32(string, IFormatProvider)'. If the result of 'Convert.ToInt32(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="181">Because the behavior of 'Convert.ToInt32(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToInt32(string, IFormatProvider)'. If the result of 'Convert.ToInt32(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt64(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="185">Because the behavior of 'Convert.ToInt64(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToInt64(string, IFormatProvider)'. If the result of 'Convert.ToInt64(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToSingle(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="189">Because the behavior of 'Convert.ToSingle(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToSingle(string, IFormatProvider)'. If the result of 'Convert.ToSingle(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToUInt16(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="209">Because the behavior of 'Convert.ToUInt16(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToUInt16(string, IFormatProvider)'. If the result of 'Convert.ToUInt16(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToUInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="213">Because the behavior of 'Convert.ToUInt32(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToUInt32(string, IFormatProvider)'. If the result of 'Convert.ToUInt32(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToUInt64(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="217">Because the behavior of 'Convert.ToUInt64(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'Convert.ToUInt64(string, IFormatProvider)'. If the result of 'Convert.ToUInt64(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.DateTime.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="168">Because the behavior of 'DateTime.Parse(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'DateTime.Parse(string, IFormatProvider)'. If the result of 'DateTime.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.TimeSpan.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="173">Because the behavior of 'TimeSpan.Parse(string)' could vary based on the current user's locale settings, replace this call in 'SerializableDictionary&lt;TKey, TValue&gt;.GetValue(Type, string)' with a call to 'TimeSpan.Parse(string, IFormatProvider)'. If the result of 'TimeSpan.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReadXml(System.Xml.XmlReader)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="69">In externally visible method 'SerializableDictionary&lt;TKey, TValue&gt;.ReadXml(XmlReader)', validate parameter 'reader' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TypeIsAtomic(System.Type)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareStaticMembersOnGenericTypes" Category="Microsoft.Design" CheckId="CA1000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="341">Remove 'SerializableDictionary&lt;TKey, TValue&gt;.TypeIsAtomic(Type)' from 'SerializableDictionary&lt;TKey, TValue&gt;' or make it an instance member.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="342">In externally visible method 'SerializableDictionary&lt;TKey, TValue&gt;.TypeIsAtomic(Type)', validate parameter 'type' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TypeIsNumeric(System.Type)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareStaticMembersOnGenericTypes" Category="Microsoft.Design" CheckId="CA1000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="362">Remove 'SerializableDictionary&lt;TKey, TValue&gt;.TypeIsNumeric(Type)' from 'SerializableDictionary&lt;TKey, TValue&gt;' or make it an instance member.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WriteXml(System.Xml.XmlWriter)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="SerializableDictionary.cs" Line="267">In externally visible method 'SerializableDictionary&lt;TKey, TValue&gt;.WriteXml(XmlWriter)', validate parameter 'writer' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsbFile" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Filename" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_Filename()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbFile.cs" Line="35">'UsbFile.Filename.get()' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+            <Accessor Name="#set_Filename(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbFile.cs" Line="39">'UsbFile.Filename.set(string)' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#ShortFileName" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_ShortFileName()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbFile.cs" Line="53">'UsbFile.ShortFileName.get()' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsbFileDirectory" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'UsbFileDirectory' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#GetFileCount(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbFileDirectory.cs" Line="75">'UsbFileDirectory.GetFileCount(string)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFileCountInternal(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbFileDirectory.cs" Line="32">'UsbFileDirectory.GetFileCountInternal(string)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFolderCount(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbFileDirectory.cs" Line="90">'UsbFileDirectory.GetFolderCount(string)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetFolderCountInternal(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbFileDirectory.cs" Line="54">'UsbFileDirectory.GetFolderCountInternal(string)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsbFolder" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'UsbFolder' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="UsbProgress" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Usb" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Usb' in type name 'UsbProgress'.</Issue>
+          </Message>
+          <Message TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+           <Issue Name="Equals" Certainty="75" Level="Warning">'UsbProgress' should override Equals.</Issue>
+           <Issue Name="op_Equality" Certainty="75" Level="Warning">'UsbProgress' should override the equality (==) and inequality (!=) operators.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#Current" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'UsbProgress.Current' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Drive" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'UsbProgress.Drive' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Total" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'UsbProgress.Total' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsbStickWriteMessageEventArgs" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Usb" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Usb' in type name 'UsbStickWriteMessageEventArgs'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#Drive" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'UsbStickWriteMessageEventArgs.Drive' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Message" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'UsbStickWriteMessageEventArgs.Message' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsbStickWriter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#EjectDrive(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="542">In method 'UsbStickWriter.EjectDrive(string)', call System.IDisposable.Dispose on object 'ecj' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="541">The 'this' parameter (or 'Me' in Visual Basic) of 'UsbStickWriter.EjectDrive(string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EjectionDelay" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_EjectionDelay()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="90">'UsbStickWriter.EjectionDelay.get()' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#FileAttributes" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#set_FileAttributes(System.Collections.Generic.Dictionary`2&lt;System.String,System.IO.FileAttributes&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="44">'UsbStickWriter.FileAttributes.set(Dictionary&lt;string, FileAttributes&gt;)' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#FolderAttributes" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#set_FolderAttributes(System.Collections.Generic.Dictionary`2&lt;System.String,System.IO.FileAttributes&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="45">'UsbStickWriter.FolderAttributes.set(Dictionary&lt;string, FileAttributes&gt;)' appears to have no upstream public or protected callers.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#FormatDrive(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="507">In method 'UsbStickWriter.FormatDrive(string)', call System.IDisposable.Dispose on object 'prc' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="508">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UsbStickWriter.FormatDrive(string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetVolumeSerial(System.IO.DriveInfo)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="490">In method 'UsbStickWriter.GetVolumeSerial(DriveInfo)', call System.IDisposable.Dispose on object 'diskObj' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="494">Modify 'UsbStickWriter.GetVolumeSerial(DriveInfo)' to catch a more specific exception than 'object' or rethrow the exception.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="486">The 'this' parameter (or 'Me' in Visual Basic) of 'UsbStickWriter.GetVolumeSerial(DriveInfo)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="490">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'UsbStickWriter.GetVolumeSerial(DriveInfo)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetVolumeId(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="525">In method 'UsbStickWriter.SetVolumeId(string, string)', call System.IDisposable.Dispose on object 'prc' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="524">The 'this' parameter (or 'Me' in Visual Basic) of 'UsbStickWriter.SetVolumeId(string, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SubThreadProcess(System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="253">'UsbStickWriter.SubThreadProcess(object)' has a cyclomatic complexity of 40. Rewrite or refactor the method to reduce complexity to 25.</Issue>
+            </Message>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="288">In method 'UsbStickWriter.SubThreadProcess(object)', call System.IDisposable.Dispose on object 'fs' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="StickFactory.UsbStickWriter.OnSubThreadStatusMessage(System.String,System.IO.DriveInfo)" TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="KnownValue" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="263">Method 'UsbStickWriter.SubThreadProcess(object)' passes a literal string as parameter 'message' of a call to 'UsbStickWriter.OnSubThreadStatusMessage(string, DriveInfo)'. Retrieve the following string(s) from a resource table instead: "Formatting drive...".</Issue>
+            </Message>
+            <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="302">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="317">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="320">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="362">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="363">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="400">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="401">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="406">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="412">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="433">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="441">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="464">'drive', a parameter, is cast to type 'DriveInfo' multiple times in method 'UsbStickWriter.SubThreadProcess(object)'. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant castclass instruction.</Issue>
+            </Message>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="268">Modify 'UsbStickWriter.SubThreadProcess(object)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="320">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UsbStickWriter.SubThreadProcess(object)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="441">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UsbStickWriter.SubThreadProcess(object)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="UsbStickWriter.cs" Line="464">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UsbStickWriter.SubThreadProcess(object)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="VolumeDataStorage" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DeserializeData(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="VolumeDataStorage.cs" Line="68">In method 'VolumeDataStorage.DeserializeData(string)', call System.IDisposable.Dispose on object 'new StringReader(serializedData)' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FileAttributeList" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'VolumeDataStorage.FileAttributeList' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FolderAttributeList" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'VolumeDataStorage.FolderAttributeList' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SerializeData(StickFactory.VolumeDataStorage)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="VolumeDataStorage.cs" Line="82">In method 'VolumeDataStorage.SerializeData(VolumeDataStorage)', call System.IDisposable.Dispose on object 'writer' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message Id="System.IO.StringWriter.#ctor" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory" File="VolumeDataStorage.cs" Line="82">Because the behavior of 'StringWriter.StringWriter()' could vary based on the current user's locale settings, replace this call in 'VolumeDataStorage.SerializeData(VolumeDataStorage)' with a call to 'StringWriter.StringWriter(IFormatProvider)'. If the result of 'StringWriter.StringWriter(IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#VolumeLabel" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'VolumeDataStorage.VolumeLabel' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#VolumeSerial" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Active" Created="2013-10-23 21:40:07Z" FixCategory="Breaking">
+             <Issue Certainty="90" Level="Error">Because field 'VolumeDataStorage.VolumeSerial' is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidCallingProblematicMethods" Category="Microsoft.Reliability" CheckId="CA2001">
+   <Name>Avoid calling problematic methods</Name>
+   <Description>Avoid making unnecessary and potentially dangerous method calls.</Description>
+   <Resolution Name="System.Runtime.InteropServices.SafeHandle.DangerousGetHandle">Remove the call to SafeHandle.DangerousGetHandle from {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb385973(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="reliabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502">
+   <Name>Avoid excessive complexity</Name>
+   <Description>Method implementations that are exceedingly complex increase the challenge of understanding and maintaining code.</Description>
+   <Resolution Name="Default">{0} has a cyclomatic complexity of {1}. Rewrite or refactor the method to reduce complexity to {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182212(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+   <Name>Avoid uninstantiated internal classes</Name>
+   <Description>An internal class was detected that is apparently never instantiated. This rule does not attempt to detect late-bound creation and will generate false positives if instances of a type are only created in this way (for example, by means of Activator.CreateInstance or by passing the type as an argument to a TypeConverter constructor).</Description>
+   <Resolution Name="Default">{0} is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182265(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Avoid unused private fields</Name>
+   <Description>Private fields were detected that do not appear to be accessed within the assembly. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Compound words should be cased correctly</Name>
+   <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+   <Resolution Name="MemberShouldBeCompoundWord">The discrete term '{0}' in member name {1} should be expressed as a compound word, '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213">
+   <Name>Disposable fields should be disposed</Name>
+   <Description>If a type that implements IDisposable owns fields that also implement IDisposable, the encapsulating type's Dispose() implementation should call Dispose() on each disposable field.</Description>
+   <Resolution Name="Default">{0} contains field {1} that is of IDisposable type: {2}. Change the Dispose method on {0} to call Dispose or Close on this field.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182328(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DisposableTypesShouldDeclareFinalizer" Category="Microsoft.Usage" CheckId="CA2216">
+   <Name>Disposable types should declare finalizer</Name>
+   <Description>If a type implements a Dispose method and has unmanaged resources, it should provide a Finalize method in case Dispose is not explicitly called. The runtime calls the Finalize method or destructor of an object prior to reclaiming its managed resources in a process known as garbage collection. The Finalize method should free any unmanaged resources before they become inaccessible.</Description>
+   <Resolution Name="Default">Implement a finalizer or destructor on {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182329(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Dispose objects before losing scope</Name>
+   <Description>If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.</Description>
+   <Resolution Name="ExceptionEdge">In method {0}, object {1} is not disposed along all exception paths. Call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Resolution Name="NonExceptionEdge">In method {0}, call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not pass literals as localized parameters" Category="Microsoft.Globalization" CheckId="CA1303">
+   <Name>Do not pass literals as localized parameters</Name>
+   <Description>Literal strings that are embedded in source code are difficult to localize. Avoid passing literal strings as arguments in circumstances where a localized string is generally expected.</Description>
+   <Resolution Name="KnownValue">Method {0} passes a literal string as parameter '{1}' of a call to {2}. Retrieve the following string(s) from a resource table instead: {3}.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182187(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+   <Name>Do not cast unnecessarily</Name>
+   <Description>Avoid duplicate casts where possible, since there is a cost associated with them.</Description>
+   <Resolution Name="Parameter">{0}, a parameter, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182271(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareStaticMembersOnGenericTypes" Category="Microsoft.Design" CheckId="CA1000">
+   <Name>Do not declare static members on generic types</Name>
+   <Description>The syntax for calling static members on generic types is complex as the type parameter has to be specified for each call.</Description>
+   <Resolution Name="Default">Remove {0} from {1} or make it an instance member.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182139(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+   <Name>Do not declare visible instance fields</Name>
+   <Description>Instance fields that are visible outside of the type that declares them, limit your ability to change the implementation details for those data items. Use properties instead. They do not compromise usability or performance and they do provide flexibility in that they conceal the implementation details of the underlying data.</Description>
+   <Resolution Name="Default">Because field {0} is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182141(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>Do not expose generic lists</Name>
+   <Description>Do not expose List&lt;T&gt; in object models. Use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt; instead. List&lt;T&gt; is meant to be used from implementation, not in object model API. List&lt;T&gt; is optimized for performance at the cost of long term versioning. For example, if you return List&lt;T&gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.</Description>
+   <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182142(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806">
+   <Name>Do not ignore method results</Name>
+   <Description>The result of methods that return new instances of strings should be assigned to a variable and subsequently used. If the result of a method that creates a new object, such as String.ToLower(), is not assigned to a variable, the call is wasted.</Description>
+   <Resolution Name="HResultOrErrorCode">{0} calls {1} but does not use the HRESULT or error code that the method returns. This could lead to unexpected behavior in error conditions or low-resource situations. Use the result in a conditional statement, assign the result to a variable, or pass it as an argument to another method.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182273(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229">
+   <Name>Implement serialization constructors</Name>
+   <Description>The constructor signature accepts the same arguments as ISerializable.GetObjectData, namely, a SerializationInfo instance and a StreamingContext instance. The constructor should be protected for non-sealed classes and private for sealed classes. Failure to implement a serialization constructor will cause deserialization to fail, and throw a SerializationException.</Description>
+   <Resolution Name="CreateMagicConstructor">Add a constructor to {0} with the following signature: 'protected {0}(SerializationInfo info, StreamingContext context)'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182343(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204">
+   <Name>Literals should be spelled correctly</Name>
+   <Description>This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.</Description>
+   <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/bb264488(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+   <Name>Mark assemblies with NeutralResourcesLanguageAttribute</Name>
+   <Description>The NeutralResourcesLanguage attribute informs the ResourceManager of the language used to render the neutral culture's resources for an assembly. When looking up resources in the same culture as the neutral resources language, the ResourceManager automatically uses the resources located in the main assembly, instead of searching for a satellite assembly with the current user interface culture for the current thread. This will improve lookup performance for the first resource you load and can reduce your working set.</Description>
+   <Resolution Name="Default">Because assembly {0} contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb385967(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414">
+   <Name>Mark boolean P/Invoke arguments with MarshalAs</Name>
+   <Description>All boolean P/Invoke parameters and return types should be explicitly marked with the MarshalAs attribute. By default, the system will marshal all booleans as 4-byte UnmanagedType.Bool. This is the correct behavior for Win32 'BOOL' arguments but incorrect for C++ 'bool' arguments, which should be marshaled as 1-byte UnmanagedType.U1. For code maintainability reasons, always explicitly specify the marshaling information for boolean arguments and return values.</Description>
+   <Resolution Name="Return">Add the MarshalAsAttribute to the return type of P/Invoke {0}. If the corresponding unmanaged return type is a 4-byte Win32 'BOOL', use MarshalAs(UnmanagedType.Bool). For a 1-byte C++ 'bool', use MarshalAs(UnmanagedType.U1).</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182206(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="interoperabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+   <Name>Move P/Invokes to NativeMethods class</Name>
+   <Description>This type contains members with the DllImport attribute. Members with the DllImport attribute should be contained in classes named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Description>
+   <Resolution Name="Default">Because it is a P/Invoke method, {0} should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182161(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034">
+   <Name>Nested types should not be visible</Name>
+   <Description>Do not use public, protected or protected internal (Protected Friend) nested types as a way of grouping types. Use namespaces for this purpose. There are very limited scenarios where nested types are the best design. Also, nested type member accessibility is not clearly understood by all audiences. Enumerators are exempt from this rule.</Description>
+   <Resolution Name="Default">Do not nest type {0}. Alternatively, change its accessibility so that it is not externally visible.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182162(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="OverrideEqualsAndOperatorEqualsOnValueTypes" Category="Microsoft.Performance" CheckId="CA1815">
+   <Name>Override equals and operator equals on value types</Name>
+   <Description>The default System.ValueType implementation might not perform as well as a custom implementation.</Description>
+   <Resolution Name="Equals">{0} should override Equals.</Resolution>
+   <Resolution Name="op_Equality">{0} should override the equality (==) and inequality (!=) operators.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182276(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901">
+   <Name>P/Invoke declarations should be portable</Name>
+   <Description>.</Description>
+   <Resolution Name="Parameter">As it is declared in your code, parameter {0} of P/Invoke {1} will be {2} bytes wide on {3} platforms. This is not correct, as the actual native declaration of this API indicates it should be {4} bytes wide on {3} platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of {5}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182284(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="portabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternate">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be based on input from the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify {4}.</Resolution>
+   <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101">
+   <Name>Specify marshaling for P/Invoke string arguments</Name>
+   <Description>When marshaling strings as ANSI (or as Auto on Win9x), some characters may be changed. If best-fit mapping is on, strings that appear different in Unicode will be marshaled to identical ANSI strings, which may lead to incorrect security decisions. Turning best-fit mapping off reduces this risk, as all characters without equivalents are mapped to '?'. Also, note that CharSet.Ansi is the default setting for all string marshaling; Unicode marshaling must be specified explicitly, either as a CharSet setting of DllImport or StructLayout, or as a MarshalAs attribute with a Unicode (or system-dependent) UnmanagedType.</Description>
+   <Resolution Name="ParameterImplicitAnsi">To reduce security risk, marshal parameter {0} as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182319(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+   <Name>Specify MessageBoxOptions</Name>
+   <Description>In order to run correctly on right-to-left systems, all calls to MessageBox.Show should use the overload that specifies MessageBoxOptions as an argument. Programs should detect whether they are running on a right-to-left system at run-time and pass the appropriate MessageBoxOptions value in order to display correctly.</Description>
+   <Resolution Name="Default">Change {0} to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182191(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+   <Name>Specify StringComparison</Name>
+   <Description>If an overload exists that takes a StringComparison argument, it should always be called in favor of an overload that does not.</Description>
+   <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386080(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+   <Name>Test for empty strings using string length</Name>
+   <Description>To test for empty strings, check if String.Length is equal to zero. Constructs such as "".Equals(someString) and String.Empty.Equals(someString) are less efficient than testing the string length. Replace these with checks for someString.Length == 0.</Description>
+   <Resolution Name="IsNullOrEmpty">Replace the call to {0} in {1} with a call to 'String.IsNullOrEmpty'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182279(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UseGenericEventHandlerInstances" Category="Microsoft.Design" CheckId="CA1003">
+   <Name>Use generic event handler instances</Name>
+   <Description>Do not declare new delegates to be used as event handlers when targeting a version of the .NET Framework that supports generics. Use an instance EventHandler&lt;T&gt; instead.</Description>
+   <Resolution Name="Default">Remove {0} and replace its usage with EventHandler&lt;T&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182178(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UseSafeHandleToEncapsulateNativeResources" Category="Microsoft.Reliability" CheckId="CA2006">
+   <Name>Use SafeHandle to encapsulate native resources</Name>
+   <Description>Use of IntPtr in managed code may indicate a potential security and reliability problem. All uses of IntPtr must be reviewed to determine whether use of a SafeHandle (or similar technology) is required in its place. Problems will occur if the IntPtr represents some native resource (memory, file handle, socket etc.) that managed code is considered to own. I.e. managed code is expected to in some way release the resource and failure to do so would cause resource leakage. In such scenarios security or reliability problems will also exist if multithreaded access is allowed to the IntPtr and a means of releasing the resource represented by the IntPtr. These problems involve recycling of the IntPtr value on resource release while simultaneous use of the resource is being made on another thread, leading to race conditions where one thread can read or write data associated with the wrong resource. For example, if your type stores an OS handle as an IntPtr and allows users to call both Close and any other method using that handle simultaneously (without some kind of synchronization), your code has a handle recycling problem, which causes data corruption and often a security vulnerability. SafeHandle (and its sibling class CriticalHandle) provide a mechanism for encapsulating a native handle to a resource so that such threading problems can be avoided (along with other issues such as the need to carefully control the lifetime of managed objects that contain a copy of the native handle over calls to native methods; ie, you can often remove calls to GC.KeepAlive). There are performance overheads implicit in using SafeHandle (and, to a lesser degree, CriticalHandle) which can often be mitigated through careful design.</Description>
+   <Resolution Name="Default">Review usage of {0} (a {1} instance) to determine whether it should be replaced with a SafeHandle or CriticalHandle.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182294(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="reliabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

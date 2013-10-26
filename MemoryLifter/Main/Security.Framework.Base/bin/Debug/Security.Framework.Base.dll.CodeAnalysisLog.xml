@@ -1,0 +1,1054 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\bin\Debug\Security.Framework.Base.dll">
+   <Modules>
+    <Module Name="security.framework.base.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'Security.Framework.Base.dll' with a strong name key.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'Security.Framework.Base.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="SecurityFramework">
+       <Types>
+        <Type Name="AccountAlreadyDefinedException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'AccountAlreadyDefinedException': protected AccountAlreadyDefinedException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'AccountAlreadyDefinedException': public AccountAlreadyDefinedException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'AccountAlreadyDefinedException': public AccountAlreadyDefinedException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="AccountWrongException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'AccountWrongException': protected AccountWrongException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'AccountWrongException': public AccountWrongException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'AccountWrongException': public AccountWrongException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="Framework" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="AbstractTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1012" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Certainty="95" Level="CriticalWarning">Change the accessibility of all public constructors in 'Framework' to protected.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#CreateSecurityToken(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="617">Because the behavior of 'string.ToLower()' could vary based on the current user's locale settings, replace this call in 'Framework.CreateSecurityToken(string)' with a call to 'string.ToLower(CultureInfo)'. If the result of 'string.ToLower(CultureInfo)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="617">Because the behavior of 'string.ToLower()' could vary based on the current user's locale settings, replace this call in 'Framework.CreateSecurityToken(string)' with a call to 'string.ToLower(CultureInfo)'. If the result of 'string.ToLower(CultureInfo)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="617">In externally visible method 'Framework.CreateSecurityToken(string)', validate parameter 'account' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetGroupObjectPermission(System.Object,System.String,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="parentLocator" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="319">'Framework.GetGroupObjectPermission(object, string, Group)' declares a variable, 'parentLocator', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="parentType" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="322">'Framework.GetGroupObjectPermission(object, string, Group)' declares a variable, 'parentType', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetGroupObjectPermissionInherited(System.Object,System.String,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="locator" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="339">'Framework.GetGroupObjectPermissionInherited(object, string, Group)' declares a variable, 'locator', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetGroupObjectPermissions(System.Object,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="476">Change 'List&lt;PermissionInfo&gt;' in 'Framework.GetGroupObjectPermissions(object, Group)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="476">In method 'Framework.GetGroupObjectPermissions(object, Group)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="478">In externally visible method 'Framework.GetGroupObjectPermissions(object, Group)', validate parameter 'o' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetGroupTypePermissions(System.String,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="499">Change 'List&lt;PermissionInfo&gt;' in 'Framework.GetGroupTypePermissions(string, Group)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="499">In method 'Framework.GetGroupTypePermissions(string, Group)', consider providing a more meaningful name than parameter name 'g'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetLocator(System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning">In method 'Framework.GetLocator(object)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetParent(System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning">In method 'Framework.GetParent(object)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetUserObjectPermission(System.Object,System.String,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="191">In method 'Framework.GetUserObjectPermission(object, string, User)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="parentLocator" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="195">'Framework.GetUserObjectPermission(object, string, User)' declares a variable, 'parentLocator', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="parentType" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="198">'Framework.GetUserObjectPermission(object, string, User)' declares a variable, 'parentType', of type 'string', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="192">In externally visible method 'Framework.GetUserObjectPermission(object, string, User)', validate parameter 'o' before using it.</Issue>
+            </Message>
+            <Message Id="2" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="203">In externally visible method 'Framework.GetUserObjectPermission(object, string, User)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetUserObjectPermissionInherited(System.Object,System.String,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="211">'Framework.GetUserObjectPermissionInherited(object, string, User)' has a cyclomatic complexity of 42. Rewrite or refactor the method to reduce complexity to 25.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetUserObjectPermissions(System.Object,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="464">Change 'List&lt;PermissionInfo&gt;' in 'Framework.GetUserObjectPermissions(object, User)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="464">In method 'Framework.GetUserObjectPermissions(object, User)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="466">In externally visible method 'Framework.GetUserObjectPermissions(object, User)', validate parameter 'o' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetUserTypePermissions(System.String,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="488">Change 'List&lt;PermissionInfo&gt;' in 'Framework.GetUserTypePermissions(string, User)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Groups" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="48">Change 'List&lt;Group&gt;' in 'Framework.Groups' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsGroupObjectPermissionInherited(System.Object,System.String,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="166">In method 'Framework.IsGroupObjectPermissionInherited(object, string, Group)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsGroupTypePermissionInherited(System.String,System.String,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="145">In method 'Framework.IsGroupTypePermissionInherited(string, string, Group)', consider providing a more meaningful name than parameter name 'g'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#IsUserObjectPermissionInherited(System.Object,System.String,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="177">In method 'Framework.IsUserObjectPermissionInherited(object, string, User)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveGroup(SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="86">In method 'Framework.RemoveGroup(Group)', consider providing a more meaningful name than parameter name 'g'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResetGroupObjectPermission(System.Object,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="596">Consider changing the type of parameter 'group' in 'Framework.ResetGroupObjectPermission(object, Group)' from 'Group' to its base type 'Role'. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Issue>
+            </Message>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="596">In method 'Framework.ResetGroupObjectPermission(object, Group)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="598">In externally visible method 'Framework.ResetGroupObjectPermission(object, Group)', validate parameter 'o' before using it.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="599">In externally visible method 'Framework.ResetGroupObjectPermission(object, Group)', validate parameter 'group' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResetGroupTypePermission(System.String,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="588">Consider changing the type of parameter 'group' in 'Framework.ResetGroupTypePermission(string, Group)' from 'Group' to its base type 'Role'. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="589">In externally visible method 'Framework.ResetGroupTypePermission(string, Group)', validate parameter 'group' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResetUserObjectPermission(System.Object,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="602">Consider changing the type of parameter 'user' in 'Framework.ResetUserObjectPermission(object, User)' from 'User' to its base type 'Role'. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Issue>
+            </Message>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="602">In method 'Framework.ResetUserObjectPermission(object, User)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="604">In externally visible method 'Framework.ResetUserObjectPermission(object, User)', validate parameter 'o' before using it.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="605">In externally visible method 'Framework.ResetUserObjectPermission(object, User)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ResetUserTypePermission(System.String,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="592">Consider changing the type of parameter 'user' in 'Framework.ResetUserTypePermission(string, User)' from 'User' to its base type 'Role'. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="593">In externally visible method 'Framework.ResetUserTypePermission(string, User)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Roles" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="55">Change 'List&lt;Role&gt;' in 'Framework.Roles' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetGroupObjectTypePermission(System.Object,System.String,System.Boolean,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="551">In method 'Framework.SetGroupObjectTypePermission(object, string, bool, Group)', consider providing a more meaningful name than parameter name 'g'.</Issue>
+            </Message>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="551">In method 'Framework.SetGroupObjectTypePermission(object, string, bool, Group)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="553">In externally visible method 'Framework.SetGroupObjectTypePermission(object, string, bool, Group)', validate parameter 'o' before using it.</Issue>
+            </Message>
+            <Message Id="3" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="557">In externally visible method 'Framework.SetGroupObjectTypePermission(object, string, bool, Group)', validate parameter 'g' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetGroupTypePermission(System.String,System.String,System.Boolean,SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="521">In method 'Framework.SetGroupTypePermission(string, string, bool, Group)', consider providing a more meaningful name than parameter name 'g'.</Issue>
+            </Message>
+            <Message Id="3" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="525">In externally visible method 'Framework.SetGroupTypePermission(string, string, bool, Group)', validate parameter 'g' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetUserObjectTypePermission(System.Object,System.String,System.Boolean,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="567">In method 'Framework.SetUserObjectTypePermission(object, string, bool, User)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="570">In externally visible method 'Framework.SetUserObjectTypePermission(object, string, bool, User)', validate parameter 'o' before using it.</Issue>
+            </Message>
+            <Message Id="3" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="575">In externally visible method 'Framework.SetUserObjectTypePermission(object, string, bool, User)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetUserTypePermission(System.String,System.String,System.Boolean,SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="3" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="539">In externally visible method 'Framework.SetUserTypePermission(string, string, bool, User)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Types" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="99">Change 'List&lt;TypeInfo&gt;' in 'Framework.Types' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateGroup(SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="90">In method 'Framework.UpdateGroup(Group)', consider providing a more meaningful name than parameter name 'g'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Users" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Framework.cs" Line="41">Change 'List&lt;User&gt;' in 'Framework.Users' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FrameworkException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'FrameworkException': protected FrameworkException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'FrameworkException': public FrameworkException().</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'FrameworkException': public FrameworkException(String, Exception).</Issue>
+          </Message>
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Certainty="95" Level="Error">Add [Serializable] to 'FrameworkException' as this type implements ISerializable.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="Group" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Name" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Name(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+               <Issue Name="TooGeneric" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Group.cs" Line="40">'Group.Name.set(string)' creates an exception of type 'Exception', an exception type that is not sufficiently specific and should never be raised by user code. If this exception instance might be thrown, use a different exception type.</Issue>
+              </Message>
+              <Message Id="Groupname" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+               <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Group.cs" Line="40">Correct the spelling of the unrecognized token 'Groupname' in the literal '"Groupname must not be empty"'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="GroupAlreadyDefinedException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'GroupAlreadyDefinedException': protected GroupAlreadyDefinedException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'GroupAlreadyDefinedException': public GroupAlreadyDefinedException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'GroupAlreadyDefinedException': public GroupAlreadyDefinedException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="IDatabaseInformations" Kind="Interface" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Informations" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Informations' in type name 'IDatabaseInformations'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ISecurityDataAdapter" Kind="Interface" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#_AddGroup(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddGroup(string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddGroupObjectPermission(System.String,System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddGroupObjectPermission(string, string, string, bool, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddGroupTypePermission(System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddGroupTypePermission(string, string, bool, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddPermissionToTypeInfo(SecurityFramework.TypeInfo,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddPermissionToTypeInfo(TypeInfo, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddTypeInfo(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddTypeInfo(string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddUser(System.String,System.String,SecurityFramework.UserAuthType)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddUser(string, string, UserAuthType)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddUserObjectPermission(System.String,System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddUserObjectPermission(string, string, string, bool, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddUserTypePermission(System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._AddUserTypePermission(string, string, bool, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetDefaultPermissionOfType(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._GetDefaultPermissionOfType(string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetPermissionOfGroupObjectPermissionList(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._GetPermissionOfGroupObjectPermissionList(string, string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetPermissionOfGroupTypePermissionList(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._GetPermissionOfGroupTypePermissionList(string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetPermissionOfUserObjectPermissionList(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._GetPermissionOfUserObjectPermissionList(string, string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetPermissionOfUserTypePermissionList(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._GetPermissionOfUserTypePermissionList(string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_Groups" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning">Change 'ISecurityDataAdapter._Groups' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;Group&gt;' in 'ISecurityDataAdapter._Groups' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._Groups'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveGroup(SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemoveGroup(Group)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveGroupObjectPermission(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemoveGroupObjectPermission(string, string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveGroupTypePermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemoveGroupTypePermission(string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemovePermissionToTypeInfo(SecurityFramework.TypeInfo,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemovePermissionToTypeInfo(TypeInfo, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveTypeInfo(SecurityFramework.TypeInfo)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemoveTypeInfo(TypeInfo)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveUser(SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemoveUser(User)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveUserObjectPermission(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemoveUserObjectPermission(string, string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveUserTypePermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._RemoveUserTypePermission(string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetGroupObjectPermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._ResetGroupObjectPermission(string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetGroupTypePermission(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._ResetGroupTypePermission(string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetUserObjectPermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._ResetUserObjectPermission(string, string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetUserTypePermission(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._ResetUserTypePermission(string, string)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_SetDefaultTypePermission(System.String,System.String,System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._SetDefaultTypePermission(string, string, bool)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_Types" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;TypeInfo&gt;' in 'ISecurityDataAdapter._Types' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._Types'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_UpdateGroup(SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._UpdateGroup(Group)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_UpdateUser(SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._UpdateUser(User)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_Users" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning">Change 'ISecurityDataAdapter._Users' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;User&gt;' in 'ISecurityDataAdapter._Users' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'ISecurityDataAdapter._Users'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DatabaseInformations" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Informations" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Informations' in member name 'ISecurityDataAdapter.DatabaseInformations' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetOpenSessions()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;ISession&gt;' in 'ISecurityDataAdapter.GetOpenSessions()' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning">Change 'ISecurityDataAdapter.GetOpenSessions()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Sessions" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning">Change 'ISecurityDataAdapter.Sessions' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;ISession&gt;' in 'ISecurityDataAdapter.Sessions' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ISession" Kind="Interface" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#LoginTime" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Replace the term 'Login' in member name 'ISession.LoginTime' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LogoutTime" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Logout" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Replace the term 'Logout' in member name 'ISession.LogoutTime' with the preferred alternate 'LogOff'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ObjectNotLocatedException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'ObjectNotLocatedException': protected ObjectNotLocatedException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'ObjectNotLocatedException': public ObjectNotLocatedException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'ObjectNotLocatedException': public ObjectNotLocatedException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="PermissionAlreadyDefinedException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'PermissionAlreadyDefinedException': protected PermissionAlreadyDefinedException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'PermissionAlreadyDefinedException': public PermissionAlreadyDefinedException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'PermissionAlreadyDefinedException': public PermissionAlreadyDefinedException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="PermissionInfo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ToString()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="Permission.cs" Line="65">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'PermissionInfo.ToString()' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SecurityToken" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetPermissions(System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="SecurityToken.cs" Line="110">Change 'List&lt;PermissionInfo&gt;' in 'SecurityToken.GetPermissions(object)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="SecurityToken.cs" Line="110">In method 'SecurityToken.GetPermissions(object)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="SecurityToken.cs" Line="111">In externally visible method 'SecurityToken.GetPermissions(object)', validate parameter 'o' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#HasPermission(System.Object,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="o" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="SecurityToken.cs" Line="103">In method 'SecurityToken.HasPermission(object, string)', consider providing a more meaningful name than parameter name 'o'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TypeAlreadyDefinedException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeAlreadyDefinedException': protected TypeAlreadyDefinedException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeAlreadyDefinedException': public TypeAlreadyDefinedException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeAlreadyDefinedException': public TypeAlreadyDefinedException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="TypeInfo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#HierachicalParent" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Hierachical" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Hierachical' in member name 'TypeInfo.HierachicalParent' or remove it entirely if it represents any sort of Hungarian notation.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Permissions" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning">Change 'TypeInfo.Permissions' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;PermissionInfo&gt;' in 'TypeInfo.Permissions' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TypeNotFoundException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeNotFoundException': protected TypeNotFoundException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeNotFoundException': public TypeNotFoundException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeNotFoundException': public TypeNotFoundException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="TypeOrPermissionNotFoundException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeOrPermissionNotFoundException': protected TypeOrPermissionNotFoundException(SerializationInfo, StreamingContext).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeOrPermissionNotFoundException': public TypeOrPermissionNotFoundException(String).</Issue>
+           <Issue Name="MissingConstructor" Certainty="95" Level="Error">Add the following constructor to 'TypeOrPermissionNotFoundException': public TypeOrPermissionNotFoundException(String, Exception).</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="User" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Account" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Account(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="NonBreaking">
+               <Issue Certainty="95" Level="CriticalError" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="User.cs" Line="45">Modify 'User.Account.set(string)' to catch a more specific exception than 'object' or rethrow the exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Groups" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning">Change 'User.Groups' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;Group&gt;' in 'User.Groups' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Name" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#set_Name(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+               <Issue Name="TooGeneric" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="User.cs" Line="57">'User.Name.set(string)' creates an exception of type 'Exception', an exception type that is not sufficiently specific and should never be raised by user code. If this exception instance might be thrown, use a different exception type.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Type" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+             <Issue Name="BaseType" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base" File="User.cs" Line="102">The property name 'User.Type' is confusing given the existence of inherited method 'object.GetType()'. Rename or remove this property.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserAuthType" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="FlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1714" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+           <Issue Certainty="75" Level="Error">If enumeration name 'UserAuthType' is singular, change it to a plural form.</Issue>
+          </Message>
+          <Message Id="Auth" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:39:51Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Auth' in type name 'UserAuthType'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AbstractTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1012">
+   <Name>Abstract types should not have constructors</Name>
+   <Description>Public constructors for abstract types do not make sense because you cannot create instances of abstract types.</Description>
+   <Resolution Name="Default">Change the accessibility of all public constructors in {0} to protected.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182126(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502">
+   <Name>Avoid excessive complexity</Name>
+   <Description>Method implementations that are exceedingly complex increase the challenge of understanding and maintaining code.</Description>
+   <Resolution Name="Default">{0} has a cyclomatic complexity of {1}. Rewrite or refactor the method to reduce complexity to {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182212(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+   <Name>Collection properties should be read only</Name>
+   <Description>Properties that return collections should be read-only so that users cannot entirely replace the backing store. Users can still modify the contents of the collection by calling relevant methods on the collection. Note that the XmlSerializer class has special support for deserializing read-only collections. See the XmlSerializer overview for more information.</Description>
+   <Resolution Name="Default">Change {0} to be read-only by removing the property setter.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182327(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011">
+   <Name>Consider passing base types as parameters</Name>
+   <Description>Using base types as parameters to methods improves re-use of these methods if you only use methods &amp; properties from the parameter's base class. E.g. use Stream instead of FileStream as a parameter when only calling Stream.Read(), this makes the method work on all kind of streams instead of just File streams.</Description>
+   <Resolution Name="Default">Consider changing the type of parameter {0} in {1} from {2} to its base type {3}. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/3hk32yyz(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>Do not expose generic lists</Name>
+   <Description>Do not expose List&lt;T&gt; in object models. Use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt; instead. List&lt;T&gt; is meant to be used from implementation, not in object model API. List&lt;T&gt; is optimized for performance at the cost of long term versioning. For example, if you return List&lt;T&gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.</Description>
+   <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182142(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201">
+   <Name>Do not raise reserved exception types</Name>
+   <Description>User code should not create and raise exceptions of certain types that are reserved by the runtime or which are of a too general exception type. Exception types that are too general include Exception, SystemException, and ApplicationException. Exception types that are reserved by the runtime include ThreadAbortException, OutOfMemoryException, ExecutionEngineException, and IndexOutOfRangeException.</Description>
+   <Resolution Name="TooGeneric">{0} creates an exception of type {1}, an exception type that is not sufficiently specific and should never be raised by user code. If this exception instance might be thrown, use a different exception type.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182338(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="FlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1714">
+   <Name>Flags enums should have plural names</Name>
+   <Description>An enumeration marked with FlagsAttribute should have a plural name.</Description>
+   <Resolution Name="Default">If enumeration name {0} is singular, change it to a plural form.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264486(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+   <Resolution Name="MemberParameterMoreMeaningfulName">In method {0}, consider providing a more meaningful name than parameter name {1}.</Resolution>
+   <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+   <Name>Identifiers should not contain underscores</Name>
+   <Description>Do not use underscores when specifying identifiers. Some generated Visual Studio identifiers for applications contain underscore characters. Underscore characters should generally be avoided in public identifiers.</Description>
+   <Resolution Name="Member">Remove the underscores from member name {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182245(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032">
+   <Name>Implement standard exception constructors</Name>
+   <Description>Multiple constructors are required to correctly implement a custom exception. Missing constructors can make your exception unusable in certain scenarios. For example, the serialization constructor is required for handling exceptions in XML Web services.</Description>
+   <Resolution Name="MissingConstructor">Add the following constructor to {0}: {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182151(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204">
+   <Name>Literals should be spelled correctly</Name>
+   <Description>This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.</Description>
+   <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/bb264488(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237">
+   <Name>Mark ISerializable types with SerializableAttribute</Name>
+   <Description>The System.Runtime.Serialization.ISerializable interface allows the type to customize its serialization, while the Serializable attribute enables the runtime to recognize the type as being serializable.</Description>
+   <Resolution Name="Default">Add [Serializable] to {0} as this type implements ISerializable.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182350(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721">
+   <Name>Property names should not match get methods</Name>
+   <Description>A Get method was found with the same name as a property. Get methods and properties should have names that clearly distinguish their function. See the design guidelines for information regarding choosing properties over methods.</Description>
+   <Resolution Name="BaseType">The property name {0} is confusing given the existence of inherited method {1}. Rename or remove this property.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182253(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304">
+   <Name>Specify CultureInfo</Name>
+   <Description>If an overload exists that takes a CultureInfo argument, it should always be called in favor of an overload that does not. The CultureInfo type contains culture-specific information required for performing numeric and string operations, such as casing, formatting, and string comparisons. In scenarios where conversion and parsing behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182189(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726">
+   <Name>Use preferred terms</Name>
+   <Description>Use preferred terms over deprecated alternates.</Description>
+   <Resolution Name="Member">Replace the term '{0}' in member name {1} with the preferred alternate '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182258(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+   <Name>Use properties where appropriate</Name>
+   <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+   <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182181(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Namespaces>
+  <Namespace Name="SecurityPgSqlAdapter">
+   <Messages>
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+     <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'SecurityPgSqlAdapter' with another namespace.</Issue>
+    </Message>
+    <Message Id="Pg" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'Pg' in namespace name 'SecurityPgSqlAdapter' by changing it to 'PG'.</Issue>
+    </Message>
+    <Message Id="Pg" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Pg' in namespace name 'SecurityPgSqlAdapter'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter\bin\Debug\Security.PgSqlAdapter.dll">
+   <Modules>
+    <Module Name="security.pgsqladapter.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'Security.PgSqlAdapter.dll' with a strong name key.</Issue>
+      </Message>
+      <Message Id="Pg" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Correct the casing of 'Pg' in assembly name 'Security.PgSqlAdapter.dll' by changing it to 'PG'.</Issue>
+      </Message>
+      <Message Id="Pg" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Pg' in assembly name 'Security.PgSqlAdapter.dll'.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'Security.PgSqlAdapter.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="SecurityPgSqlAdapter">
+       <Types>
+        <Type Name="AccessControlListAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#RemoveEntryById(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="418">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'AccessControlListAdapter.RemoveEntryById(int)' could contain the following variables 'id'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="418">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'AccessControlListAdapter.RemoveEntryById(int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="AccessControlListEntry" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'AccessControlListEntry' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="DatabaseInformationAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#FormsAuthentication" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_FormsAuthentication()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="700">Because the behavior of 'Convert.ToBoolean(object)' could vary based on the current user's locale settings, replace this call in 'DatabaseInformationAdapter.FormsAuthentication.get()' with a call to 'Convert.ToBoolean(object, IFormatProvider)'. If the result of 'Convert.ToBoolean(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#LdapUseSsl" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_LdapUseSsl()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="932">Because the behavior of 'Convert.ToBoolean(object)' could vary based on the current user's locale settings, replace this call in 'DatabaseInformationAdapter.LdapUseSsl.get()' with a call to 'Convert.ToBoolean(object, IFormatProvider)'. If the result of 'Convert.ToBoolean(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#ListAuthentication" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_ListAuthentication()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="671">Because the behavior of 'Convert.ToBoolean(object)' could vary based on the current user's locale settings, replace this call in 'DatabaseInformationAdapter.ListAuthentication.get()' with a call to 'Convert.ToBoolean(object, IFormatProvider)'. If the result of 'Convert.ToBoolean(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#LocalDirectoryAuthentication" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Accessors>
+            <Accessor Name="#get_LocalDirectoryAuthentication()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+             <Messages>
+              <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="729">Because the behavior of 'Convert.ToBoolean(object)' could vary based on the current user's locale settings, replace this call in 'DatabaseInformationAdapter.LocalDirectoryAuthentication.get()' with a call to 'Convert.ToBoolean(object, IFormatProvider)'. If the result of 'Convert.ToBoolean(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ObjectListAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#AddEntry(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="542">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'ObjectListAdapter.AddEntry(string)' could contain the following variables 'locator', 'null'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="539">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'ObjectListAdapter.AddEntry(string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetIdByLocator(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="570">'ObjectListAdapter.GetIdByLocator(string)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="578">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'ObjectListAdapter.GetIdByLocator(string)' could contain the following variables 'locator'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="578">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'ObjectListAdapter.GetIdByLocator(string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveEntry(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="563">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'ObjectListAdapter.RemoveEntry(int)' could contain the following variables 'id'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="563">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'ObjectListAdapter.RemoveEntry(int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ObjectListEntry" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'ObjectListEntry' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="PermissionAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Refresh()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="112">Because the behavior of 'Convert.ToBoolean(object)' could vary based on the current user's locale settings, replace this call in 'PermissionAdapter.Refresh()' with a call to 'Convert.ToBoolean(object, IFormatProvider)'. If the result of 'Convert.ToBoolean(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="109">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'PermissionAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="111">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'PermissionAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PgSqlSecurityDataAdapter" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Pg" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'Pg' in type name 'PgSqlSecurityDataAdapter' by changing it to 'PG'.</Issue>
+          </Message>
+          <Message Id="Pg" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Pg' in type name 'PgSqlSecurityDataAdapter'.</Issue>
+          </Message>
+          <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+           <Issue Name="ProvideDisposeBool" Certainty="95" Level="Error">Provide an overridable implementation of Dispose(bool) on 'PgSqlSecurityDataAdapter' or mark the type as sealed. A call to Dispose(false) should only clean up native resources. A call to Dispose(true) should clean up both managed and native resources.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#__Groups" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning">Change 'PgSqlSecurityDataAdapter.__Groups' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;Group&gt;' in 'PgSqlSecurityDataAdapter.__Groups' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'PgSqlSecurityDataAdapter.__Groups'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__Types" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;TypeInfo&gt;' in 'PgSqlSecurityDataAdapter.__Types' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'PgSqlSecurityDataAdapter.__Types'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#__Users" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning">Change 'PgSqlSecurityDataAdapter.__Users' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error">Change 'List&lt;User&gt;' in 'PgSqlSecurityDataAdapter.__Users' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Remove the underscores from member name 'PgSqlSecurityDataAdapter.__Users'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddGroup(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="194">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._AddGroup(string)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddGroupObjectPermission(System.String,System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="561">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._AddGroupObjectPermission(string, string, string, bool, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddGroupTypePermission(System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="497">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._AddGroupTypePermission(string, string, bool, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddUser(System.String,System.String,SecurityFramework.UserAuthType)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="221">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._AddUser(string, string, UserAuthType)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddUserObjectPermission(System.String,System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="596">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._AddUserObjectPermission(string, string, string, bool, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_AddUserTypePermission(System.String,System.String,System.Boolean,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="531">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._AddUserTypePermission(string, string, bool, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetPermissionOfGroupObjectPermissionList(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="346">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'PgSqlSecurityDataAdapter._GetPermissionOfGroupObjectPermissionList(string, string, string, string)' could contain the following variables 'groupId', 'permissionName', 'locator', 'type'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="346">Because the behavior of 'string.Format(string, params object[])' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._GetPermissionOfGroupObjectPermissionList(string, string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetPermissionOfGroupTypePermissionList(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="308">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'PgSqlSecurityDataAdapter._GetPermissionOfGroupTypePermissionList(string, string, string)' could contain the following variables 'groupId', 'permissionName', 'type'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="308">Because the behavior of 'string.Format(string, object, object, object)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._GetPermissionOfGroupTypePermissionList(string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_GetPermissionOfUserObjectPermissionList(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="366">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'PgSqlSecurityDataAdapter._GetPermissionOfUserObjectPermissionList(string, string, string, string)' could contain the following variables 'userId', 'permissionName', 'locator', 'type'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="366">Because the behavior of 'string.Format(string, params object[])' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._GetPermissionOfUserObjectPermissionList(string, string, string, string)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_Groups" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="166">Change 'PgSqlSecurityDataAdapter._Groups' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="166">Change 'List&lt;Group&gt;' in 'PgSqlSecurityDataAdapter._Groups' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+           <Accessors>
+            <Accessor Name="#get__Groups()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="174">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._Groups.get()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#_RemoveGroup(SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="206">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveGroup(Group)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="207">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveGroup(Group)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="206">In externally visible method 'PgSqlSecurityDataAdapter._RemoveGroup(Group)', validate parameter 'group' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveGroupObjectPermission(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="578">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveGroupObjectPermission(string, string, string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveGroupTypePermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="510">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveGroupTypePermission(string, string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveUser(SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="228">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveUser(User)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="229">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveUser(User)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="228">In externally visible method 'PgSqlSecurityDataAdapter._RemoveUser(User)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveUserObjectPermission(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="614">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveUserObjectPermission(string, string, string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_RemoveUserTypePermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="547">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._RemoveUserTypePermission(string, string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetGroupObjectPermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="717">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._ResetGroupObjectPermission(string, string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetGroupTypePermission(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="635">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._ResetGroupTypePermission(string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetUserObjectPermission(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="765">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._ResetUserObjectPermission(string, string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_ResetUserTypePermission(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="677">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._ResetUserTypePermission(string, string)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_Types" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="76">Change 'List&lt;TypeInfo&gt;' in 'PgSqlSecurityDataAdapter._Types' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_UpdateGroup(SecurityFramework.Group)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="212">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._UpdateGroup(Group)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="212">In externally visible method 'PgSqlSecurityDataAdapter._UpdateGroup(Group)', validate parameter 'group' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_UpdateUser(SecurityFramework.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="235">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._UpdateUser(User)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="236">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._UpdateUser(User)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="239">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._UpdateUser(User)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="239">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._UpdateUser(User)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="235">In externally visible method 'PgSqlSecurityDataAdapter._UpdateUser(User)', validate parameter 'user' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#_Users" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="125">Change 'PgSqlSecurityDataAdapter._Users' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="125">Change 'List&lt;User&gt;' in 'PgSqlSecurityDataAdapter._Users' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+           <Accessors>
+            <Accessor Name="#get__Users()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="135">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._Users.get()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+               <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="146">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._Users.get()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+               <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="146">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter._Users.get()' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#Dispose()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CallGCSuppressFinalizeCorrectly" Category="Microsoft.Usage" CheckId="CA1816" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="NotCalled" Certainty="75" Level="CriticalWarning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="855">Change 'PgSqlSecurityDataAdapter.Dispose()' to call 'GC.SuppressFinalize(object)'. This will prevent derived types that introduce a finalizer from needing to re-implement 'IDisposable' to call it.</Issue>
+            </Message>
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Name="DisposeImplementation" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="855">Modify 'PgSqlSecurityDataAdapter.Dispose()' so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FindAC_ID_Object(System.String,System.String,System.String,System.String,System.Boolean)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="410">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'PgSqlSecurityDataAdapter.FindAC_ID_Object(string, string, string, string, bool)' could contain the following variables 'roleId', 'permissionName', 'object_locator', 'type'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="410">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter.FindAC_ID_Object(string, string, string, string, bool)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="410">Because the behavior of 'string.Format(string, params object[])' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter.FindAC_ID_Object(string, string, string, string, bool)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FindAC_ID_Type(System.String,System.String,System.String,System.Boolean)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="478">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'PgSqlSecurityDataAdapter.FindAC_ID_Type(string, string, string, bool)' could contain the following variables 'roleId', 'permissionName', 'type'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="478">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter.FindAC_ID_Type(string, string, string, bool)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="478">Because the behavior of 'string.Format(string, params object[])' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter.FindAC_ID_Type(string, string, string, bool)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FindObject_ID(System.String,System.String,System.String,System.String,System.Boolean)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="443">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'PgSqlSecurityDataAdapter.FindObject_ID(string, string, string, string, bool)' could contain the following variables 'roleId', 'permissionName', 'object_locator', 'type'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="443">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter.FindObject_ID(string, string, string, string, bool)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="443">Because the behavior of 'string.Format(string, params object[])' could vary based on the current user's locale settings, replace this call in 'PgSqlSecurityDataAdapter.FindObject_ID(string, string, string, string, bool)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetOpenSessions()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="809">Change 'List&lt;ISession&gt;' in 'PgSqlSecurityDataAdapter.GetOpenSessions()' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SecurityFramework.ISecurityDataAdapter.Sessions" Kind="Property" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="867">Change 'PgSqlSecurityDataAdapter.ISecurityDataAdapter.Sessions' to be read-only by removing the property setter.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="867">Change 'List&lt;ISession&gt;' in 'PgSqlSecurityDataAdapter.ISecurityDataAdapter.Sessions' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+           <Accessors>
+            <Accessor Name="#SecurityFramework.ISecurityDataAdapter.get_Sessions()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="868">'PgSqlSecurityDataAdapter.ISecurityDataAdapter.Sessions.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+              <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="867">Make 'PgSqlSecurityDataAdapter' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ISecurityDataAdapter.Sessions.get()' and is visible to derived classes.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+            <Accessor Name="#SecurityFramework.ISecurityDataAdapter.set_Sessions(System.Collections.Generic.List`1&lt;SecurityFramework.ISession&gt;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+               <Issue Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="871">Make 'PgSqlSecurityDataAdapter' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'ISecurityDataAdapter.Sessions.set(List&lt;ISession&gt;)' and is visible to derived classes.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PostgreSQLConn" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="SQL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'SQL' in type name 'PostgreSQLConn' by changing it to 'Sql'.</Issue>
+          </Message>
+          <Message Id="Postgre" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Postgre' in type name 'PostgreSQLConn'.</Issue>
+          </Message>
+          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+           <Issue Certainty="90" Level="Error">Because type 'PostgreSQLConn' contains only 'static' ('Shared' in Visual Basic) members, add a default private constructor to prevent the compiler from adding a default public constructor.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#CreateConnection(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="35">In method 'PostgreSQLConn.CreateConnection(string)', object 'conn' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'conn' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExecuteNonQuery(Npgsql.NpgsqlCommand)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="47">Consider changing the type of parameter 'command' in 'PostgreSQLConn.ExecuteNonQuery(NpgsqlCommand)' from 'NpgsqlCommand' to its base type 'DbCommand'. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="51">In externally visible method 'PostgreSQLConn.ExecuteNonQuery(NpgsqlCommand)', validate parameter 'command' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExecuteReader(Npgsql.NpgsqlCommand)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="66">In externally visible method 'PostgreSQLConn.ExecuteReader(NpgsqlCommand)', validate parameter 'command' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExecuteScalar(Npgsql.NpgsqlCommand)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="77">Consider changing the type of parameter 'command' in 'PostgreSQLConn.ExecuteScalar(NpgsqlCommand)' from 'NpgsqlCommand' to its base type 'DbCommand'. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="81">In externally visible method 'PostgreSQLConn.ExecuteScalar(NpgsqlCommand)', validate parameter 'command' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExecuteScalar`1(Npgsql.NpgsqlCommand)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="System.Convert.ChangeType(System.Object,System.Type)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="94">Because the behavior of 'Convert.ChangeType(object, Type)' could vary based on the current user's locale settings, replace this call in 'PostgreSQLConn.ExecuteScalar&lt;T&gt;(NpgsqlCommand)' with a call to 'Convert.ChangeType(object, Type, IFormatProvider)'. If the result of 'Convert.ChangeType(object, Type, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WriteDebugInfos(Npgsql.NpgsqlCommand)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="103">'PostgreSQLConn.WriteDebugInfos(NpgsqlCommand)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+            <Message Id="System.DateTime.ToString(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="104">Because the behavior of 'DateTime.ToString(string)' could vary based on the current user's locale settings, replace this call in 'PostgreSQLConn.WriteDebugInfos(NpgsqlCommand)' with a call to 'DateTime.ToString(string, IFormatProvider)'. If the result of 'DateTime.ToString(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="104">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'PostgreSQLConn.WriteDebugInfos(NpgsqlCommand)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PostgreSQLConn.cs" Line="109">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'PostgreSQLConn.WriteDebugInfos(NpgsqlCommand)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Session" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.Int32,System.String,System.DateTime,System.DateTime)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterShouldBeCompoundWord" Certainty="80" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="35">In member 'Session.Session(int, string, DateTime, DateTime)', the discrete term 'username' in parameter name 'username' should be expressed as a compound word, 'userName'.</Issue>
+            </Message>
+            <Message Id="userId" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="35">Parameter 'userId' of 'Session.Session(int, string, DateTime, DateTime)' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+            <Message Id="login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="35">In member 'Session.Session(int, string, DateTime, DateTime)', replace the term 'login' in parameter name 'loginTime' with the preferred alternate 'logOn'.</Issue>
+            </Message>
+            <Message Id="logout" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="PgSqlSecurityDataAdapter.cs" Line="35">In member 'Session.Session(int, string, DateTime, DateTime)', replace the term 'logout' in parameter name 'logoutTime' with the preferred alternate 'logOff'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TypeDefinitionsAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Refresh()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="60">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'TypeDefinitionsAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="64">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'TypeDefinitionsAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserGroups_AccessControlListAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#AddEntry(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="496">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'UserGroups_AccessControlListAdapter.AddEntry(int, int)' could contain the following variables 'group_id', 'acl_id'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="493">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UserGroups_AccessControlListAdapter.AddEntry(int, int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveEntry(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="511">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'UserGroups_AccessControlListAdapter.RemoveEntry(int, int)' could contain the following variables 'group_id', 'acl_id'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="511">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UserGroups_AccessControlListAdapter.RemoveEntry(int, int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserGroups_AccessControlListEntry" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'UserGroups_AccessControlListEntry' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="UserGroupsAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#AddGroup(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="267">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'UserGroupsAdapter.AddGroup(string)' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Refresh()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="241">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'UserGroupsAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateGroup(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="293">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'UserGroupsAdapter.UpdateGroup(int, string)' could contain the following variables 'name'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserProfiles_AccessControlListAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#AddEntry(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="450">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'UserProfiles_AccessControlListAdapter.AddEntry(int, int)' could contain the following variables 'user_id', 'acl_id'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="447">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UserProfiles_AccessControlListAdapter.AddEntry(int, int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveEntry(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="465">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'UserProfiles_AccessControlListAdapter.RemoveEntry(int, int)' could contain the following variables 'user_id', 'acl_id'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="465">Because the behavior of 'string.Format(string, object, object)' could vary based on the current user's locale settings, replace this call in 'UserProfiles_AccessControlListAdapter.RemoveEntry(int, int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserProfiles_AccessControlListEntry" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'UserProfiles_AccessControlListEntry' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="UserProfiles_UserGroupsAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Refresh()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="327">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'UserProfiles_UserGroupsAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="328">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'UserProfiles_UserGroupsAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveEntriesByUserId(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="356">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'UserProfiles_UserGroupsAdapter.RemoveEntriesByUserId(int)' could contain the following variables 'base.ToString()'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="355">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'UserProfiles_UserGroupsAdapter.RemoveEntriesByUserId(int)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserProfilesAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#AddUser(System.String,System.String,SecurityFramework.UserAuthType)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="177">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'UserProfilesAdapter.AddUser(string, string, UserAuthType)' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Refresh()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message Id="System.Convert.ToBoolean(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="149">Because the behavior of 'Convert.ToBoolean(object)' could vary based on the current user's locale settings, replace this call in 'UserProfilesAdapter.Refresh()' with a call to 'Convert.ToBoolean(object, IFormatProvider)'. If the result of 'Convert.ToBoolean(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="147">Because the behavior of 'Convert.ToInt32(object)' could vary based on the current user's locale settings, replace this call in 'UserProfilesAdapter.Refresh()' with a call to 'Convert.ToInt32(object, IFormatProvider)'. If the result of 'Convert.ToInt32(object, IFormatProvider)' will be based on input from the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateUser(System.Int32,System.String,System.String,SecurityFramework.UserAuthType)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2013-10-23 21:40:06Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\Memory Lifter\MemoryLifter\Main\Security.PgSqlAdapter" File="RawAdapters.cs" Line="208">The query string passed to 'NpgsqlCommand.CommandText.set(string)' in 'UserProfilesAdapter.UpdateUser(int, string, string, UserAuthType)' could contain the following variables 'name', 'password', 'typ'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+   <Name>Avoid namespaces with few types</Name>
+   <Description>A namespace should generally have more than five types.</Description>
+   <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182130(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+   <Name>Avoid uninstantiated internal classes</Name>
+   <Description>An internal class was detected that is apparently never instantiated. This rule does not attempt to detect late-bound creation and will generate false positives if instances of a type are only created in this way (for example, by means of Activator.CreateInstance or by passing the type as an argument to a TypeConverter constructor).</Description>
+   <Resolution Name="Default">{0} is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182265(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="CallGCSuppressFinalizeCorrectly" Category="Microsoft.Usage" CheckId="CA1816">
+   <Name>Call GC.SuppressFinalize correctly</Name>
+   <Description>Call GC.SuppressFinalize to suppress finalization of your instance once Dispose has been called. Objects that implement IDisposable should call SuppressFinalize from the IDisposable.Dispose method to prevent the garbage collector from calling Object.Finalize on an object that does not require it.</Description>
+   <Resolution Name="NotCalled">Change {0} to call {1}. This will prevent derived types that introduce a finalizer from needing to re-implement 'IDisposable' to call it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182269(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+   <Name>Collection properties should be read only</Name>
+   <Description>Properties that return collections should be read-only so that users cannot entirely replace the backing store. Users can still modify the contents of the collection by calling relevant methods on the collection. Note that the XmlSerializer class has special support for deserializing read-only collections. See the XmlSerializer overview for more information.</Description>
+   <Resolution Name="Default">Change {0} to be read-only by removing the property setter.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182327(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Compound words should be cased correctly</Name>
+   <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+   <Resolution Name="MemberParameterShouldBeCompoundWord">In member {0}, the discrete term '{1}' in parameter name {2} should be expressed as a compound word, '{3}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011">
+   <Name>Consider passing base types as parameters</Name>
+   <Description>Using base types as parameters to methods improves re-use of these methods if you only use methods &amp; properties from the parameter's base class. E.g. use Stream instead of FileStream as a parameter when only calling Stream.Read(), this makes the method work on all kind of streams instead of just File streams.</Description>
+   <Resolution Name="Default">Consider changing the type of parameter {0} in {1} from {2} to its base type {3}. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/3hk32yyz(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Dispose objects before losing scope</Name>
+   <Description>If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.</Description>
+   <Resolution Name="ExceptionEdge">In method {0}, object {1} is not disposed along all exception paths. Call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>Do not expose generic lists</Name>
+   <Description>Do not expose List&lt;T&gt; in object models. Use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt; instead. List&lt;T&gt; is meant to be used from implementation, not in object model API. List&lt;T&gt; is optimized for performance at the cost of long term versioning. For example, if you return List&lt;T&gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.</Description>
+   <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182142(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065">
+   <Name>Do not raise exceptions in unexpected locations</Name>
+   <Description>Do not explicitly raise exceptions from unexpected locations. There are some methods, such as Equals and GetHashCode, which users do not expect to raise exceptions. Therefore calls to these methods are not commonly wrapped in try catch blocks.</Description>
+   <Resolution Name="PropertyGetter">{0} creates an exception of type {1}, an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386039(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error, Warning</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
+   <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>Identifiers should be spelled correctly</Name>
+   <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+   <Resolution Name="Assembly">Correct the spelling of '{0}' in assembly name {1}.</Resolution>
+   <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
+   <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264492(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+   <Name>Identifiers should not contain underscores</Name>
+   <Description>Do not use underscores when specifying identifiers. Some generated Visual Studio identifiers for applications contain underscore characters. Underscore characters should generally be avoided in public identifiers.</Description>
+   <Resolution Name="Member">Remove the underscores from member name {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182245(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
+   <Name>Implement IDisposable correctly</Name>
+   <Description>All IDisposable types should implement the Dispose pattern correctly.</Description>
+   <Resolution Name="DisposeImplementation">Modify {0} so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Resolution>
+   <Resolution Name="ProvideDisposeBool">Provide an overridable implementation of Dispose(bool) on {0} or mark the type as sealed. A call to Dispose(false) should only clean up native resources. A call to Dispose(true) should clean up both managed and native resources.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms244737(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+   <Name>Interface methods should be callable by child types</Name>
+   <Description>Explicit method implementations are defined with private accessibility. Classes that derive from classes with explicit method implementations and choose to re-declare them on the class will not be able to call into the base class implementation unless the base class has provided an alternate method with appropriate accessibility. When overriding a base class method that has been hidden by explicit interface implementation, in order to call into the base class implementation, a derived class must cast the base pointer to the relevant interface. When calling through this reference, however, the derived class implementation will actually be invoked, resulting in recursion and an eventual stack overflow.</Description>
+   <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182153(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Review unused parameters</Name>
+   <Description>Review parameters in non-virtual methods that are not used in the method body to ensure no correctness exists around failure to access them. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+   <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182268(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternate">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be based on input from the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify {4}.</Resolution>
+   <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053">
+   <Name>Static holder types should not have constructors</Name>
+   <Description>Instances of types that define only static members do not need to be created. Many compilers will automatically add a public default constructor if no constructor is specified. To prevent this, adding an empty private constructor may be required.</Description>
+   <Resolution Name="Default">Because type {0} contains only 'static' ('Shared' in Visual Basic) members, add a default private constructor to prevent the compiler from adding a default public constructor.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182169(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726">
+   <Name>Use preferred terms</Name>
+   <Description>Use preferred terms over deprecated alternates.</Description>
+   <Resolution Name="MemberParameter">In member {0}, replace the term '{1}' in parameter name {2} with the preferred alternate '{3}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182258(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

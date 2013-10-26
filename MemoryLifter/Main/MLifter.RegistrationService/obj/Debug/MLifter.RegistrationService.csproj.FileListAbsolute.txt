@@ -1,0 +1,7 @@
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.RegistrationService\bin\MLifter.RegistrationService.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.RegistrationService\bin\MLifter.RegistrationService.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.RegistrationService\obj\Debug\MLifter.RegistrationService.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.RegistrationService\obj\Debug\MLifter.RegistrationService.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.RegistrationService\bin\MLifter.RegistrationService.dll.CodeAnalysisLog.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.RegistrationService\bin\MLifter.RegistrationService.dll.lastcodeanalysissucceeded
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.RegistrationService\obj\Debug\MLifter.RegistrationService.csprojResolveAssemblyReference.cache

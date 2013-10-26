@@ -1,0 +1,15 @@
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\MLifter.ModuleService.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\MLifter.ModuleService.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\MLifter.Generics.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\Esent.Collections.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\Esent.Interop.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\MLifter.Generics.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\Esent.Collections.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\Esent.Collections.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\Esent.Interop.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\Esent.Interop.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\obj\Debug\MLifter.ModuleService.csprojResolveAssemblyReference.cache
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\obj\Debug\MLifter.ModuleService.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\obj\Debug\MLifter.ModuleService.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\MLifter.ModuleService.dll.CodeAnalysisLog.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.ModuleService\bin\MLifter.ModuleService.dll.lastcodeanalysissucceeded
