@@ -397,7 +397,7 @@ namespace MLifter.Components
             {
                 string strg = CaseSensitive ? str.Trim() : str.ToLower().Trim();
                 strg = RemoveIgnoreChars(strg);
-                
+                strg = strg.ReplaceIgnoreCharacter();
                 if (openSynonyms.Contains(strg))
                 {
                     CorrectSynonyms++;
@@ -766,6 +766,33 @@ namespace MLifter.Components
                 ForeColor = orgForeColor;
             }
         }
+
+    }
+
+    public static class IgnoredChar
+    {
+
+
+        static Dictionary<string, string> IgnoreChars
+        {
+            get
+            {
+                return new Dictionary<string, string> { { "é", "e" }, { "è", "e" }, { "ê", "e" } };
+            }
+        }
+
+        public static string ReplaceIgnoreCharacter(this string input)
+        {
+            var replacedAnswer = input;
+            foreach (var ignoreChar in IgnoreChars.Keys)
+            {
+                if (input.Contains(ignoreChar))
+                    replacedAnswer = input.Replace(ignoreChar, IgnoreChars[ignoreChar]);
+            }
+
+            return replacedAnswer;
+        }
+
 
     }
 
