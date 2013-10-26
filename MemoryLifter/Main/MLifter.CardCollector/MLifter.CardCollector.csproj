@@ -12,10 +12,14 @@
     <AssemblyName>MLifter.CardCollector</AssemblyName>
     <ApplicationIcon>
     </ApplicationIcon>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <StartupObject>
     </StartupObject>
     <FileUpgradeFlags>

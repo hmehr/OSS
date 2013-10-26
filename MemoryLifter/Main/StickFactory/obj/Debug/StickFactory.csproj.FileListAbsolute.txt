@@ -1,1 +1,15 @@
 C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\StickFactory.exe.config
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\usbe.exe
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\vid.exe
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\StickFactory.exe
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\StickFactory.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\obj\Debug\StickFactory.DriveStatusControl.resources
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\obj\Debug\StickFactory.ImageCreatorForm.resources
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\obj\Debug\StickFactory.MainForm.resources
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\obj\Debug\StickFactory.Properties.Resources.resources
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\obj\Debug\StickFactory.csproj.GenerateResource.Cache
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\obj\Debug\StickFactory.exe
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\obj\Debug\StickFactory.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\StickFactory.exe.CodeAnalysisLog.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\StickFactory\bin\Debug\StickFactory.exe.lastcodeanalysissucceeded

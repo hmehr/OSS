@@ -13,11 +13,8 @@
  ***************************************************************************************************************************************/
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-
-using MLifter.DAL;
 using System.ComponentModel;
 using System.Drawing;
 using System.Net;
@@ -385,7 +382,7 @@ namespace MLifter.Components
 
             if (CorrectOnTheFly)
                 Text += e.KeyChar.ToString();
-
+            
             //corrected because of [ML-486] - deletion with backspace still causes the answer to be true
             //if (e.KeyChar == (char)Keys.Enter)
             //    Undo();
@@ -400,7 +397,7 @@ namespace MLifter.Components
             {
                 string strg = CaseSensitive ? str.Trim() : str.ToLower().Trim();
                 strg = RemoveIgnoreChars(strg);
-
+                
                 if (openSynonyms.Contains(strg))
                 {
                     CorrectSynonyms++;
@@ -771,4 +768,7 @@ namespace MLifter.Components
         }
 
     }
+
+
+    
 }

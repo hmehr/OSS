@@ -13,6 +13,7 @@
  ***************************************************************************************************************************************/
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 using MLifter.DAL;
@@ -52,8 +53,8 @@ namespace MLifter.BusinessLayer
             this.card = card;
             this.dictionary = dictionary;
 
-			ignoreChars = Regex.Escape(dictionary.Settings.StripChars).Replace("-", "\\-");
-			validChar = new Regex("[" + ignoreChars + "\\b" + "]");
+            ignoreChars = Regex.Escape(dictionary.Settings.StripChars).Replace("-", "\\-");
+            validChar = new Regex("[" + ignoreChars + "\\b" + "]");
 
             AttachEvents();
         }
@@ -211,53 +212,55 @@ namespace MLifter.BusinessLayer
                 return BaseCard.Answer.Culture.TextInfo.IsRightToLeft ? "RTL" : "LTR";
         }
 
-		private string ignoreChars;
-		private Regex validChar;
+        private string ignoreChars;
+        private Regex validChar;
 
-		/// <summary>
-		/// Parses the input answers.
-		/// </summary>
-		/// <param name="input">The input.</param>
-		/// <returns></returns>
-		/// <remarks>Documented by Dev09, 2009-04-28</remarks>
-		private List<String> ParseInputAnswers(string input, bool stripIgnoreChars)
-		{
-			List<string> inputAnswers = new List<string>();
+        /// <summary>
+        /// Parses the input answers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        /// <remarks>Documented by Dev09, 2009-04-28</remarks>
+        private List<String> ParseInputAnswers(string input, bool stripIgnoreChars)
+        {
+            List<string> inputAnswers = new List<string>();
 
-			input = ConvertNewlines(input);		// converts multiple new line characters to <br>
-			inputAnswers.AddRange(input.Split(new String[] { "<br />" }, StringSplitOptions.RemoveEmptyEntries));
-			for (int i = 0; i < inputAnswers.Count; i++)
-				inputAnswers[i] = inputAnswers[i].Trim();
+            input = ConvertNewlines(input);		// converts multiple new line characters to <br>
+            inputAnswers.AddRange(input.Split(new String[] { "<br />" }, StringSplitOptions.RemoveEmptyEntries));
+            for (int i = 0; i < inputAnswers.Count; i++)
+                inputAnswers[i] = inputAnswers[i].Trim();
 
-			// strip out ignore characters
-			if (stripIgnoreChars)
-				inputAnswers.ForEach(a => inputAnswers[inputAnswers.IndexOf(a)] = validChar.Replace(a, String.Empty));
+            // strip out ignore characters
+            if (stripIgnoreChars)
+                inputAnswers.ForEach(a => inputAnswers[inputAnswers.IndexOf(a)] = validChar.Replace(a, String.Empty));
 
-			return inputAnswers;
-		}
 
-		/// <summary>
-		/// Parses the correct answers.
-		/// </summary>
-		/// <returns></returns>
-		/// <remarks>Documented by Dev09, 2009-04-28</remarks>
-		private List<String> ParseCorrectAnswers(bool stripIgnoreChars)
-		{
-			List<string> correctAnswers = new List<string>();
+            return inputAnswers;
 
-			// pull each word (answer) from the full answer
-			// remove ignored characters
-			IList<IWord> answers = CurrentAnswer.Words;
-			foreach (IWord word in answers)
-			{
-				if (stripIgnoreChars)
-					correctAnswers.Add(validChar.Replace(word.Word, String.Empty).Trim().Replace("&lt;", "<").Replace("&gt;", ">"));
-				else
-					correctAnswers.Add(word.Word.Trim().Replace("&lt;", "<").Replace("&gt;", ">"));
-			}
+        }
 
-			return correctAnswers;
-		}
+        /// <summary>
+        /// Parses the correct answers.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>Documented by Dev09, 2009-04-28</remarks>
+        private List<String> ParseCorrectAnswers(bool stripIgnoreChars)
+        {
+            List<string> correctAnswers = new List<string>();
+
+            // pull each word (answer) from the full answer
+            // remove ignored characters
+            IList<IWord> answers = CurrentAnswer.Words;
+            foreach (IWord word in answers)
+            {
+                if (stripIgnoreChars)
+                    correctAnswers.Add(validChar.Replace(word.Word, String.Empty).Trim().Replace("&lt;", "<").Replace("&gt;", ">"));
+                else
+                    correctAnswers.Add(word.Word.Trim().Replace("&lt;", "<").Replace("&gt;", ">"));
+            }
+
+            return correctAnswers;
+        }
 
         /// <summary>
         /// Checks the synonyms.
@@ -267,10 +270,10 @@ namespace MLifter.BusinessLayer
         /// <remarks>Documented by Dev09, 2009-04-21</remarks>
         public string CheckSynonyms(string input)
         {
-			List<string> correctAnswers = ParseCorrectAnswers(true);
-			List<string> inputAnswers = ParseInputAnswers(input, true);
-			if (input.Trim() == "" || (inputAnswers.Count == 1 && correctAnswers.Count == 1)) return "true";
-			if (inputAnswers.Count > correctAnswers.Count) return "false";
+            List<string> correctAnswers = ParseCorrectAnswers(true);
+            List<string> inputAnswers = ParseInputAnswers(input, true);
+            if (input.Trim() == "" || (inputAnswers.Count == 1 && correctAnswers.Count == 1)) return "true";
+            if (inputAnswers.Count > correctAnswers.Count) return "false";
 
             foreach (string correctAnswer in correctAnswers)
             {
@@ -288,39 +291,39 @@ namespace MLifter.BusinessLayer
         /// <remarks>Documented by Dev09, 2009-04-21</remarks>
         public string ColorSynonyms(string input, string side)
         {
-			if (dictionary.LearnMode == LearnModes.Sentence)
-			{
-				if (side == "answer")
-				{
-					if (dictionary.CurrentQueryDirection == EQueryDirection.Question2Answer)
-						return card.AnswerExample.ToString();
-					else
-						return card.QuestionExample.ToString();
-				}
-				else
-					return input;
-			}
+            if (dictionary.LearnMode == LearnModes.Sentence)
+            {
+                if (side == "answer")
+                {
+                    if (dictionary.CurrentQueryDirection == EQueryDirection.Question2Answer)
+                        return card.AnswerExample.ToString();
+                    else
+                        return card.QuestionExample.ToString();
+                }
+                else
+                    return input;
+            }
 
-			List<string> correctAnswers = ParseCorrectAnswers(true);
-			List<string> originalAnswers = ParseCorrectAnswers(false);
-			List<string> inputAnswers = ParseInputAnswers(input, true);
-			List<string> originalInputAnswers = ParseInputAnswers(input, false);
-			if (correctAnswers.Count == 1 && inputAnswers.Count == 1)
-			{
-				if (side == "answer")
-					return originalAnswers[0];
-				else
-					return input;
-			}
+            List<string> correctAnswers = ParseCorrectAnswers(true);
+            List<string> originalAnswers = ParseCorrectAnswers(false);
+            List<string> inputAnswers = ParseInputAnswers(input, true);
+            List<string> originalInputAnswers = ParseInputAnswers(input, false);
+            if (correctAnswers.Count == 1 && inputAnswers.Count == 1)
+            {
+                if (side == "answer")
+                    return originalAnswers[0];
+                else
+                    return input;
+            }
 
-			List<string> lcInputAnswers = new List<string>();
-			List<string> lcCorrectAnswers = new List<string>();
-			bool caseSensitive = (bool)dictionary.Settings.CaseSensitive;
-			if (!caseSensitive)
-			{
-				inputAnswers.ForEach(a => lcInputAnswers.Add(a.ToLower()));
-				correctAnswers.ForEach(a => lcCorrectAnswers.Add(a.ToLower()));
-			}
+            List<string> lcInputAnswers = new List<string>();
+            List<string> lcCorrectAnswers = new List<string>();
+            bool caseSensitive = (bool)dictionary.Settings.CaseSensitive;
+            if (!caseSensitive)
+            {
+                inputAnswers.ForEach(a => lcInputAnswers.Add(a.ToLower()));
+                correctAnswers.ForEach(a => lcCorrectAnswers.Add(a.ToLower()));
+            }
 
             string htmlString = null;
             if (side == "question")
@@ -329,9 +332,9 @@ namespace MLifter.BusinessLayer
                 for (int i = 0; i < inputAnswers.Count; i++)
                 {
                     if (correctAnswers.Contains(inputAnswers[i]) || (!caseSensitive && lcCorrectAnswers.Contains(lcInputAnswers[i])))
-						htmlString += "<span class=\"correctInput\">" + originalInputAnswers[i] + "</span>\n";
+                        htmlString += "<span class=\"correctInput\">" + originalInputAnswers[i] + "</span>\n";
                     else
-						htmlString += "<span class=\"wrongInput\">" + originalInputAnswers[i] + "</span>\n";
+                        htmlString += "<span class=\"wrongInput\">" + originalInputAnswers[i] + "</span>\n";
                 }
             }
             else if (side == "answer")
@@ -340,9 +343,9 @@ namespace MLifter.BusinessLayer
                 for (int i = 0; i < correctAnswers.Count; i++)
                 {
                     if (inputAnswers.Contains(correctAnswers[i]) || (!caseSensitive && lcInputAnswers.Contains(lcCorrectAnswers[i])))
-						htmlString += "<span class=\"correctAnswer\">" + originalAnswers[i] + "</span>\n";
+                        htmlString += "<span class=\"correctAnswer\">" + originalAnswers[i] + "</span>\n";
                     else
-						htmlString += "<span class=\"wrongAnswer\">" + originalAnswers[i] + "</span>\n";
+                        htmlString += "<span class=\"wrongAnswer\">" + originalAnswers[i] + "</span>\n";
                 }
             }
             return ConvertNewlines((htmlString == null) ? String.Empty : htmlString.Trim());
@@ -409,4 +412,6 @@ namespace MLifter.BusinessLayer
         }
         # endregion
     }
+
+    
 }

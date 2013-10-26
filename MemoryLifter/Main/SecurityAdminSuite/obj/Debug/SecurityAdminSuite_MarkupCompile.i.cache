@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Projects\Memory Lifter\MemoryLifter\Main\SecurityAdminSuite\obj\Debug\
+C:\Users\hmehr\Documents\GitHub\OSS\MemoryLifter\Main\SecurityAdminSuite\obj\Debug\
 SecurityAdminSuite
 none
 false
 DEBUG;TRACE
-C:\Projects\Memory Lifter\MemoryLifter\Main\SecurityAdminSuite\App.xaml
+C:\Users\hmehr\Documents\GitHub\OSS\MemoryLifter\Main\SecurityAdminSuite\App.xaml
 212126251147
 
 17403658130
-22-506979281
+22-1385082663
 AddUserToGroupDialog.xaml;Dialogs\AboutBox.xaml;Dialogs\AuthenticationSettingsEditor.xaml;Dialogs\Sessions.xaml;Dialogs\UserAuth.xaml;ImportUserWindow.xaml;Miscs\Button.xaml;Miscs\Expander.xaml;Miscs\GlobalResources.xaml;Miscs\Label.xaml;Miscs\ListBox.xaml;Miscs\MainTheme.xaml;Miscs\Menu.xaml;Miscs\ScrollViewer.xaml;Miscs\TabPage.xaml;Miscs\TextBlock.xaml;Miscs\TextBox.xaml;Miscs\TreeView.xaml;StringEditor.xaml;UserEditor.xaml;MainWindow.xaml;
 
 True

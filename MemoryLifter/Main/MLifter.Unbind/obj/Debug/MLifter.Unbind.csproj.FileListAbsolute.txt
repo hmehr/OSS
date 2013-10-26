@@ -1,1 +1,15 @@
 C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\bin\Debug\MLifter.Unbind.exe.config
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\bin\Debug\MLifter.Unbind.exe.manifest
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\bin\Debug\MLifter.Unbind.application
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\bin\Debug\MLifter.Unbind.exe
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\bin\Debug\MLifter.Unbind.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.csprojResolveAssemblyReference.cache
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.Properties.Resources.resources
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.csproj.GenerateResource.Cache
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.TrustInfo.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.exe.manifest
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.application
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.exe
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\obj\Debug\MLifter.Unbind.pdb
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\bin\Debug\MLifter.Unbind.exe.CodeAnalysisLog.xml
+C:\Projects\Memory Lifter\MemoryLifter\Main\MLifter.Unbind\bin\Debug\MLifter.Unbind.exe.lastcodeanalysissucceeded
