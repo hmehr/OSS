@@ -1,0 +1,6 @@
+The system does not accept answers that include accented characters like é, è, etc.
+We created an extension method for string class that uses a character map to replace these characters with their standard corresponding character
+before making a judgement about the correctness of the user answer.
+The alternative would have been to ask user for a set of characters to be ignored on application setting, but this is not acceptable
+since it might cause misuse.
+We included the replacement of the input right into the mlifter_textbox where all sort of input analysis are happening.
