@@ -587,6 +587,18 @@ namespace MLifterTest.DAL
 					Assert.IsFalse(theSettings.CaseSensitive.HasValue, "CaseSensitive Property value although it should not");
 				}
 
+                //IgnoreAccentChars Property
+                theSettings.IgnoreAccentChars = true;
+                Assert.IsTrue(theSettings.IgnoreAccentChars.HasValue, "IgnoreAccentChars Property has no value although it should");
+                Assert.IsTrue(theSettings.IgnoreAccentChars.Value, "IgnoreAccentChars Property was not set correctly");
+                theSettings.IgnoreAccentChars = false;
+                Assert.IsTrue(theSettings.IgnoreAccentChars.HasValue, "IgnoreAccentChars Property has no value although it should");
+                Assert.IsFalse(theSettings.IgnoreAccentChars.Value, "IgnoreAccentChars Property was not set correctly");
+                if (TestInfrastructure.SupportsNullableValues(TestContext))
+                {
+                    theSettings.IgnoreAccentChars = null;
+                    Assert.IsFalse(theSettings.IgnoreAccentChars.HasValue, "IgnoreAccentChars Property value although it should not");
+                }
 
 				//ConfirmDemote Property
 				theSettings.ConfirmDemote = true;

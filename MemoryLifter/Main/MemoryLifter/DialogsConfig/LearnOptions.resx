@@ -112,69 +112,69 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxTeacherHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBoxTeacherHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBoxTeacherHelp.Location" type="System.Drawing.Point, System.Drawing">
     <value>465, 182</value>
   </data>
-  <metadata name="MainHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="MainHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBoxTeacherHelp.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -188,7 +188,7 @@
     <value>pictureBoxTeacherHelp</value>
   </data>
   <data name="&gt;&gt;pictureBoxTeacherHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTeacherHelp.Parent" xml:space="preserve">
     <value>TSTeachers</value>
@@ -221,7 +221,7 @@
     <value>LTeachers</value>
   </data>
   <data name="&gt;&gt;LTeachers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LTeachers.Parent" xml:space="preserve">
     <value>TSTeachers</value>
@@ -251,7 +251,7 @@
     <value>labelTeacherLoadingError</value>
   </data>
   <data name="&gt;&gt;labelTeacherLoadingError.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelTeacherLoadingError.Parent" xml:space="preserve">
     <value>GBTeacher</value>
@@ -275,7 +275,7 @@
     <value>GBTeacher</value>
   </data>
   <data name="&gt;&gt;GBTeacher.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GBTeacher.Parent" xml:space="preserve">
     <value>TSTeachers</value>
@@ -308,7 +308,7 @@
     <value>TSTeachers</value>
   </data>
   <data name="&gt;&gt;TSTeachers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TSTeachers.Parent" xml:space="preserve">
     <value>PCOptions</value>
@@ -329,7 +329,7 @@
     <value>learnModes</value>
   </data>
   <data name="&gt;&gt;learnModes.Type" xml:space="preserve">
-    <value>MLifter.Controls.LearnModes, MLifterControls, Version=2.2.524.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>MLifter.Controls.LearnModes, MLifter.Controls, Version=2.4.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;learnModes.Parent" xml:space="preserve">
     <value>TSLearning</value>
@@ -353,7 +353,7 @@
     <value>TSLearning</value>
   </data>
   <data name="&gt;&gt;TSLearning.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TSLearning.Parent" xml:space="preserve">
     <value>PCOptions</value>
@@ -364,47 +364,47 @@
   <data name="pictureBoxTextInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="pictureBoxTextInfo.Location" type="System.Drawing.Point, System.Drawing">
@@ -420,7 +420,7 @@
     <value>pictureBoxTextInfo</value>
   </data>
   <data name="&gt;&gt;pictureBoxTextInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBoxTextInfo.Parent" xml:space="preserve">
     <value>GBSynonyms</value>
@@ -450,7 +450,7 @@
     <value>labelTextInfo</value>
   </data>
   <data name="&gt;&gt;labelTextInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelTextInfo.Parent" xml:space="preserve">
     <value>GBSynonyms</value>
@@ -477,7 +477,7 @@
     <value>RGSynonym3</value>
   </data>
   <data name="&gt;&gt;RGSynonym3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGSynonym3.Parent" xml:space="preserve">
     <value>GBSynonyms</value>
@@ -504,7 +504,7 @@
     <value>RGSynonym4</value>
   </data>
   <data name="&gt;&gt;RGSynonym4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGSynonym4.Parent" xml:space="preserve">
     <value>GBSynonyms</value>
@@ -531,7 +531,7 @@
     <value>RGSynonym2</value>
   </data>
   <data name="&gt;&gt;RGSynonym2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGSynonym2.Parent" xml:space="preserve">
     <value>GBSynonyms</value>
@@ -558,7 +558,7 @@
     <value>RGSynonym1</value>
   </data>
   <data name="&gt;&gt;RGSynonym1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGSynonym1.Parent" xml:space="preserve">
     <value>GBSynonyms</value>
@@ -585,7 +585,7 @@
     <value>RGSynonym0</value>
   </data>
   <data name="&gt;&gt;RGSynonym0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGSynonym0.Parent" xml:space="preserve">
     <value>GBSynonyms</value>
@@ -609,7 +609,7 @@
     <value>GBSynonyms</value>
   </data>
   <data name="&gt;&gt;GBSynonyms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GBSynonyms.Parent" xml:space="preserve">
     <value>TSSynonyms</value>
@@ -633,7 +633,7 @@
     <value>TSSynonyms</value>
   </data>
   <data name="&gt;&gt;TSSynonyms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TSSynonyms.Parent" xml:space="preserve">
     <value>PCOptions</value>
@@ -641,8 +641,32 @@
   <data name="&gt;&gt;TSSynonyms.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="CBIgnore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 122</value>
+  </data>
+  <data name="CBIgnore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 17</value>
+  </data>
+  <data name="CBIgnore.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="CBIgnore.Text" xml:space="preserve">
+    <value>Ignore accented chars</value>
+  </data>
+  <data name="&gt;&gt;CBIgnore.Name" xml:space="preserve">
+    <value>CBIgnore</value>
+  </data>
+  <data name="&gt;&gt;CBIgnore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CBIgnore.Parent" xml:space="preserve">
+    <value>TSTyping</value>
+  </data>
+  <data name="&gt;&gt;CBIgnore.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="EStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 162</value>
+    <value>271, 165</value>
   </data>
   <data name="EStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 21</value>
@@ -654,49 +678,19 @@
     <value>EStrip</value>
   </data>
   <data name="&gt;&gt;EStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;EStrip.Parent" xml:space="preserve">
     <value>TSTyping</value>
   </data>
   <data name="&gt;&gt;EStrip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LIgnore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LIgnore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 128</value>
-  </data>
-  <data name="LIgnore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 28</value>
-  </data>
-  <data name="LIgnore.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="LIgnore.Text" xml:space="preserve">
-    <value>Ignore these characters during correction:</value>
-  </data>
-  <data name="LIgnore.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="&gt;&gt;LIgnore.Name" xml:space="preserve">
-    <value>LIgnore</value>
-  </data>
-  <data name="&gt;&gt;LIgnore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LIgnore.Parent" xml:space="preserve">
-    <value>TSTyping</value>
-  </data>
-  <data name="&gt;&gt;LIgnore.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="CBSelfAssessment.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="CBSelfAssessment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 103</value>
+    <value>271, 95</value>
   </data>
   <data name="CBSelfAssessment.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 17</value>
@@ -711,7 +705,7 @@
     <value>CBSelfAssessment</value>
   </data>
   <data name="&gt;&gt;CBSelfAssessment.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBSelfAssessment.Parent" xml:space="preserve">
     <value>TSTyping</value>
@@ -723,7 +717,7 @@
     <value>NoControl</value>
   </data>
   <data name="CBCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 76</value>
+    <value>271, 68</value>
   </data>
   <data name="CBCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 18</value>
@@ -738,7 +732,7 @@
     <value>CBCase</value>
   </data>
   <data name="&gt;&gt;CBCase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBCase.Parent" xml:space="preserve">
     <value>TSTyping</value>
@@ -750,7 +744,7 @@
     <value>NoControl</value>
   </data>
   <data name="CBCorrect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 49</value>
+    <value>271, 41</value>
   </data>
   <data name="CBCorrect.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 18</value>
@@ -765,7 +759,7 @@
     <value>CBCorrect</value>
   </data>
   <data name="&gt;&gt;CBCorrect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBCorrect.Parent" xml:space="preserve">
     <value>TSTyping</value>
@@ -792,7 +786,7 @@
     <value>RGTyping3</value>
   </data>
   <data name="&gt;&gt;RGTyping3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGTyping3.Parent" xml:space="preserve">
     <value>GBTyping</value>
@@ -819,7 +813,7 @@
     <value>RGTyping2</value>
   </data>
   <data name="&gt;&gt;RGTyping2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGTyping2.Parent" xml:space="preserve">
     <value>GBTyping</value>
@@ -846,7 +840,7 @@
     <value>RGTyping1</value>
   </data>
   <data name="&gt;&gt;RGTyping1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGTyping1.Parent" xml:space="preserve">
     <value>GBTyping</value>
@@ -873,7 +867,7 @@
     <value>RGTyping0</value>
   </data>
   <data name="&gt;&gt;RGTyping0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RGTyping0.Parent" xml:space="preserve">
     <value>GBTyping</value>
@@ -897,13 +891,43 @@
     <value>GBTyping</value>
   </data>
   <data name="&gt;&gt;GBTyping.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GBTyping.Parent" xml:space="preserve">
     <value>TSTyping</value>
   </data>
   <data name="&gt;&gt;GBTyping.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="LIgnore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LIgnore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 131</value>
+  </data>
+  <data name="LIgnore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 28</value>
+  </data>
+  <data name="LIgnore.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LIgnore.Text" xml:space="preserve">
+    <value>Ignore these characters during correction:</value>
+  </data>
+  <data name="LIgnore.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;LIgnore.Name" xml:space="preserve">
+    <value>LIgnore</value>
+  </data>
+  <data name="&gt;&gt;LIgnore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LIgnore.Parent" xml:space="preserve">
+    <value>TSTyping</value>
+  </data>
+  <data name="&gt;&gt;LIgnore.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="TSTyping.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -921,7 +945,7 @@
     <value>TSTyping</value>
   </data>
   <data name="&gt;&gt;TSTyping.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TSTyping.Parent" xml:space="preserve">
     <value>PCOptions</value>
@@ -948,7 +972,7 @@
     <value>LblMin</value>
   </data>
   <data name="&gt;&gt;LblMin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LblMin.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -975,7 +999,7 @@
     <value>LblTo</value>
   </data>
   <data name="&gt;&gt;LblTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LblTo.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -996,7 +1020,7 @@
     <value>SEMin2</value>
   </data>
   <data name="&gt;&gt;SEMin2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SEMin2.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1017,7 +1041,7 @@
     <value>SEMin1</value>
   </data>
   <data name="&gt;&gt;SEMin1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SEMin1.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1038,7 +1062,7 @@
     <value>SERights</value>
   </data>
   <data name="&gt;&gt;SERights.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SERights.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1059,7 +1083,7 @@
     <value>SECards</value>
   </data>
   <data name="&gt;&gt;SECards.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SECards.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1080,7 +1104,7 @@
     <value>SETime</value>
   </data>
   <data name="&gt;&gt;SETime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SETime.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1107,7 +1131,7 @@
     <value>CBQuit</value>
   </data>
   <data name="&gt;&gt;CBQuit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBQuit.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1134,7 +1158,7 @@
     <value>CBSnooze</value>
   </data>
   <data name="&gt;&gt;CBSnooze.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBSnooze.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1161,7 +1185,7 @@
     <value>CBRights</value>
   </data>
   <data name="&gt;&gt;CBRights.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBRights.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1188,7 +1212,7 @@
     <value>CBCards</value>
   </data>
   <data name="&gt;&gt;CBCards.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBCards.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1215,7 +1239,7 @@
     <value>CBTime</value>
   </data>
   <data name="&gt;&gt;CBTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBTime.Parent" xml:space="preserve">
     <value>GBEndSession</value>
@@ -1239,7 +1263,7 @@
     <value>GBEndSession</value>
   </data>
   <data name="&gt;&gt;GBEndSession.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GBEndSession.Parent" xml:space="preserve">
     <value>TSPlanning</value>
@@ -1263,7 +1287,7 @@
     <value>TSPlanning</value>
   </data>
   <data name="&gt;&gt;TSPlanning.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TSPlanning.Parent" xml:space="preserve">
     <value>PCOptions</value>
@@ -1290,7 +1314,7 @@
     <value>checkBoxCheckForBetaUpdates</value>
   </data>
   <data name="&gt;&gt;checkBoxCheckForBetaUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxCheckForBetaUpdates.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1320,7 +1344,7 @@
     <value>checkBoxUseDictionaryStylesheets</value>
   </data>
   <data name="&gt;&gt;checkBoxUseDictionaryStylesheets.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxUseDictionaryStylesheets.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1350,7 +1374,7 @@
     <value>checkBoxStartExitSound</value>
   </data>
   <data name="&gt;&gt;checkBoxStartExitSound.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxStartExitSound.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1377,7 +1401,7 @@
     <value>checkBoxOneInstance</value>
   </data>
   <data name="&gt;&gt;checkBoxOneInstance.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxOneInstance.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1404,7 +1428,7 @@
     <value>CBGeneral3</value>
   </data>
   <data name="&gt;&gt;CBGeneral3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral3.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1431,7 +1455,7 @@
     <value>CBGeneral2</value>
   </data>
   <data name="&gt;&gt;CBGeneral2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral2.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1458,7 +1482,7 @@
     <value>CBGeneral1</value>
   </data>
   <data name="&gt;&gt;CBGeneral1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral1.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1485,7 +1509,7 @@
     <value>CBGeneral0</value>
   </data>
   <data name="&gt;&gt;CBGeneral0.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral0.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1512,7 +1536,7 @@
     <value>CBGeneral7</value>
   </data>
   <data name="&gt;&gt;CBGeneral7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral7.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1539,7 +1563,7 @@
     <value>CBGeneral6</value>
   </data>
   <data name="&gt;&gt;CBGeneral6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral6.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1566,7 +1590,7 @@
     <value>CBGeneral5</value>
   </data>
   <data name="&gt;&gt;CBGeneral5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral5.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1593,7 +1617,7 @@
     <value>CBGeneral4</value>
   </data>
   <data name="&gt;&gt;CBGeneral4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CBGeneral4.Parent" xml:space="preserve">
     <value>GBGeneral</value>
@@ -1617,7 +1641,7 @@
     <value>GBGeneral</value>
   </data>
   <data name="&gt;&gt;GBGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GBGeneral.Parent" xml:space="preserve">
     <value>TSGeneral</value>
@@ -1641,7 +1665,7 @@
     <value>TSGeneral</value>
   </data>
   <data name="&gt;&gt;TSGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TSGeneral.Parent" xml:space="preserve">
     <value>PCOptions</value>
@@ -1668,7 +1692,7 @@
     <value>PCOptions</value>
   </data>
   <data name="&gt;&gt;PCOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PCOptions.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1695,7 +1719,7 @@
     <value>btnOkay</value>
   </data>
   <data name="&gt;&gt;btnOkay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnOkay.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1722,7 +1746,7 @@
     <value>btnCancel</value>
   </data>
   <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1730,7 +1754,7 @@
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleBaseSize" type="System.Drawing.Size, System.Drawing">
@@ -2543,12 +2567,12 @@
     <value>MainHelp</value>
   </data>
   <data name="&gt;&gt;MainHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>QueryOptionsForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

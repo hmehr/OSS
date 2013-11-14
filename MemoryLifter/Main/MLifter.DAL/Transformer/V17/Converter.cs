@@ -477,7 +477,8 @@ namespace MLifter.DAL.Transformer.V17
 						queryOptions = Convert.ToInt32(Dic.ReadByte());
 					}
 
-					dictionary.DefaultSettings.CaseSensitive = ((((int)EQueryOption.CaseSensitive) & queryOptions) > 0);
+                    dictionary.DefaultSettings.CaseSensitive = ((((int)EQueryOption.CaseSensitive) & queryOptions) > 0);
+                    dictionary.DefaultSettings.IgnoreAccentChars = ((((int)EQueryOption.IgnoreAccentChars) & queryOptions) > 0);
 					dictionary.DefaultSettings.EnableTimer = ((((int)EQueryOption.CountDown) & queryOptions) > 0);
 					dictionary.DefaultSettings.ShowStatistics = ((((int)EQueryOption.Stats) & queryOptions) > 0);
 					dictionary.DefaultSettings.ShowImages = ((((int)EQueryOption.Images) & queryOptions) > 0);

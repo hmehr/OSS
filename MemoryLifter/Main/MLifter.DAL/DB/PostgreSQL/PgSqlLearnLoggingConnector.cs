@@ -70,8 +70,8 @@ namespace MLifter.DAL.DB.PostgreSQL
             {
                 using (NpgsqlCommand cmd = con.CreateCommand())
                 {
-                    cmd.CommandText = "INSERT INTO \"LearnLog\" (session_id, user_id, lm_id, cards_id, old_box, new_box, timestamp, duration, learn_mode, move_type, answer, direction, case_sensitive, correct_on_the_fly, percentage_known, percentage_required) ";
-                    cmd.CommandText += " VALUES(:sid, :uid, :lmid, :cid, :obox, :nbox, :ts, :dur, :lmode, :mtype, :answ, :dir, :csen, :cotf, :pknown, :preq); ";
+                    cmd.CommandText = "INSERT INTO \"LearnLog\" (session_id, user_id, lm_id, cards_id, old_box, new_box, timestamp, duration, learn_mode, move_type, answer, direction, case_sensitive,ignore_accent_chars, correct_on_the_fly, percentage_known, percentage_required) ";
+                    cmd.CommandText += " VALUES(:sid, :uid, :lmid, :cid, :obox, :nbox, :ts, :dur, :lmode, :mtype, :answ, :dir, :csen,:iach, :cotf, :pknown, :preq); ";
 
                     if (learnLog.MoveType != MoveType.Manual && answeredCardCorrect)
                         cmd.CommandText += "UPDATE \"LearningSessions\" SET sum_right=sum_right + 1 WHERE id=:sid AND user_id=:uid AND lm_id=:lmid; ";
@@ -106,6 +106,7 @@ namespace MLifter.DAL.DB.PostgreSQL
                     cmd.Parameters.Add("answ", learnLog.Answer);
                     cmd.Parameters.Add("dir", learnLog.Direction.Value.ToString());
                     cmd.Parameters.Add("csen", learnLog.CaseSensitive);
+                    cmd.Parameters.Add("iach", learnLog.CaseSensitive);
                     cmd.Parameters.Add("cotf", learnLog.CorrectOnTheFly);
                     cmd.Parameters.Add("pknown", learnLog.PercentageKnown);
                     cmd.Parameters.Add("preq", learnLog.PercentageRequired);

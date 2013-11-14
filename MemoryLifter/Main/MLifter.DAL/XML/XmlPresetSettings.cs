@@ -314,6 +314,19 @@ namespace MLifter.DAL.XML
 			set { m_CaseSensitive = value.GetValueOrDefault(); }
 		}
 
+        private bool m_IgnoreAccentChars;
+        /// <summary>
+        /// Gets or sets a value indicating whether the answer ignores accented chars.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if ignores accented chars; otherwise, <c>false</c>.
+        /// </value>
+        public bool? IgnoreAccentChars
+        {
+            get { return m_IgnoreAccentChars; }
+            set { m_IgnoreAccentChars = value.GetValueOrDefault(); }
+        }
+
 		private bool m_ConfirmDemote;
 		/// <summary>
 		/// Gets or sets a value indicating whether user confirmation is required to confirm demote.

@@ -1,7 +1,0 @@
-C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\bin\Debug\Security.Framework.Base.dll.config
-C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\bin\Debug\Security.Framework.Base.dll
-C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\bin\Debug\Security.Framework.Base.pdb
-C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\obj\Debug\Security.Framework.Base.dll
-C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\obj\Debug\Security.Framework.Base.pdb
-C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\bin\Debug\Security.Framework.Base.dll.CodeAnalysisLog.xml
-C:\Projects\Memory Lifter\MemoryLifter\Main\Security.Framework.Base\bin\Debug\Security.Framework.Base.dll.lastcodeanalysissucceeded

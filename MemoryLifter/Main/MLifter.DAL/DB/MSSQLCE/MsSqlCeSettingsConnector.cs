@@ -73,9 +73,10 @@ namespace MLifter.DAL.DB.MsSqlCe
 
 			SqlCeDataReader reader = MSSQLCEConn.ExecuteReader(cmd);
 			reader.Read();
-			//read the values
+			//read the values.
 			bool? autoplayAudio = DbValueConverter.Convert<bool>(reader["autoplay_audio"]);
 			bool? caseSensitive = DbValueConverter.Convert<bool>(reader["case_sensitive"]);
+			bool? ignoreAccentChars = DbValueConverter.Convert<bool>(reader["ignore_accent_chars"]);
 			bool? confirmDemote = DbValueConverter.Convert<bool>(reader["confirm_demote"]);
 			bool? enableCommentary = DbValueConverter.Convert<bool>(reader["enable_commentary"]);
 			bool? correctOnTheFly = DbValueConverter.Convert<bool>(reader["correct_on_the_fly"]);
@@ -115,7 +116,8 @@ namespace MLifter.DAL.DB.MsSqlCe
 			//cache values
 			DateTime expires = DateTime.Now.Add(Cache.DefaultSettingsValidationTime);
 			Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsAutoPlayAudio, settingsId, expires)] = autoplayAudio;
-			Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsCaseSensetive, settingsId, expires)] = caseSensitive;
+            Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsCaseSensetive, settingsId, expires)] = caseSensitive;
+            Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsIgnoreAccentChars, settingsId, expires)] = ignoreAccentChars;
 			Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsConfirmDemote, settingsId, expires)] = confirmDemote;
 			Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsEnableCommentary, settingsId, expires)] = enableCommentary;
 			Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsCorrectOnTheFly, settingsId, expires)] = correctOnTheFly;
@@ -151,7 +153,8 @@ namespace MLifter.DAL.DB.MsSqlCe
 			switch (cacheObjectType)
 			{
 				case CacheObject.SettingsAutoPlayAudio: cacheValue = autoplayAudio; break;
-				case CacheObject.SettingsCaseSensetive: cacheValue = caseSensitive; break;
+                case CacheObject.SettingsCaseSensetive: cacheValue = caseSensitive; break;
+                case CacheObject.SettingsIgnoreAccentChars: cacheValue = ignoreAccentChars; break;
 				case CacheObject.SettingsConfirmDemote: cacheValue = confirmDemote; break;
 				case CacheObject.SettingsEnableCommentary: cacheValue = enableCommentary; break;
 				case CacheObject.SettingsCorrectOnTheFly: cacheValue = correctOnTheFly; break;
@@ -919,6 +922,39 @@ namespace MLifter.DAL.DB.MsSqlCe
 			Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsCaseSensetive, id, Cache.DefaultSettingsValidationTime)] = CaseSensetive;
 		}
 
+        /// <summary>
+        /// Gets the case sensetive.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
+        /// <remarks>Documented by Dev05, 2009-01-15</remarks>
+        public bool? GetIgnoreAccentChars(int id)
+        {
+            object cacheValue;
+            if (!SettingsCached(id, CacheObject.SettingsIgnoreAccentChars, out cacheValue))      //if settings are not in Cache --> load them
+                GetSettingsValue(id, CacheObject.SettingsIgnoreAccentChars, out cacheValue);    //Saves the current Settings from the DB to the Cache
+            return cacheValue as bool?;
+        }
+
+        /// <summary>
+        /// Sets the case sensetive.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <param name="CaseSensetive">The case sensetive.</param>
+        /// <remarks>Documented by Dev05, 2009-01-15</remarks>
+        public void SetIgnoreAccentChars(int id, bool? IgnoreAccentChars)
+        {
+            SqlCeCommand cmd = MSSQLCEConn.CreateCommand(Parent.CurrentUser);
+            cmd.CommandText = "UPDATE \"Settings\" SET ignore_accent_chars=@value WHERE id=@id";
+            cmd.Parameters.Add("@id", id);
+            cmd.Parameters.Add("@value", IgnoreAccentChars.HasValue ? IgnoreAccentChars : DBNull.Value as object);
+
+            MSSQLCEConn.ExecuteNonQuery(cmd);
+
+            //Save to cache
+            Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsIgnoreAccentChars, id, Cache.DefaultSettingsValidationTime)] = IgnoreAccentChars;
+        }
+
 		/// <summary>
 		/// Gets the confirm demote.
 		/// </summary>
@@ -1671,10 +1707,10 @@ namespace MLifter.DAL.DB.MsSqlCe
 			cmd = MSSQLCEConn.CreateCommand(Parent.CurrentUser);
 			cmd.CommandText = "INSERT INTO \"Settings\"" +
 							  "(snooze_options, multiple_choice_options, query_types, type_gradings, synonym_gradings, query_directions, cardstyle, boxes, " +
-							  "autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
+							  "autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
 							  "show_images, stripchars, auto_boxsize, pool_empty_message_shown, show_statistics, skip_correct_answers, use_lm_stylesheets, question_culture, answer_culture)" +
 							  "VALUES(@snooze_options_id, @multiple_choice_options_id, @query_types_id, @type_gradings_id, @synonym_gradings_id, @query_directions_id, " +
-							  "@card_styles_id, @boxes_id, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'en', 'en'); SELECT @@IDENTITY";
+							  "@card_styles_id, @boxes_id, null, null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, 'en', 'en'); SELECT @@IDENTITY";
 			cmd.Parameters.Add("@snooze_options_id", snoozeOptionsId);
 			cmd.Parameters.Add("@multiple_choice_options_id", multipleChoiceOptionsId);
 			cmd.Parameters.Add("@query_types_id", queryTypesId);
@@ -1748,10 +1784,10 @@ namespace MLifter.DAL.DB.MsSqlCe
 			cmd = MSSQLCEConn.CreateCommand(Parent.CurrentUser);
 			cmd.CommandText = "INSERT INTO \"Settings\"" +
 							  "(snooze_options, multiple_choice_options, query_types, type_gradings, synonym_gradings, query_directions, cardstyle, boxes, " +
-							  "autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
+							  "autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
 							  "show_images, stripchars, auto_boxsize, pool_empty_message_shown, show_statistics, skip_correct_answers, use_lm_stylesheets, question_culture, answer_culture)" +
 							  "VALUES(@snooze_options_id, @multiple_choice_options_id, @query_types_id, @type_gradings_id, @synonym_gradings_id, @query_directions_id, " +
-							  "@card_styles_id, @boxes_id, 1, 0, 0, 0, 0, 0, 1, 0, 1, @stripchars, 0, 0, 1, 0, 1, 'en', 'en'); SELECT @@IDENTITY";
+							  "@card_styles_id, @boxes_id, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, @stripchars, 0, 0, 1, 0, 1, 'en', 'en'); SELECT @@IDENTITY";
 			cmd.Parameters.Add("@snooze_options_id", snoozeOptionsId);
 			cmd.Parameters.Add("@multiple_choice_options_id", multipleChoiceOptionsId);
 			cmd.Parameters.Add("@query_types_id", queryTypesId);
@@ -1829,10 +1865,10 @@ namespace MLifter.DAL.DB.MsSqlCe
 			cmd = MSSQLCEConn.CreateCommand(Parent.CurrentUser);
 			cmd.CommandText = "INSERT INTO \"Settings\"" +
 							  "(snooze_options, multiple_choice_options, query_types, type_gradings, synonym_gradings, query_directions, cardstyle, boxes, " +
-							  "autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
+                              "autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
 							  "show_images, stripchars, auto_boxsize, pool_empty_message_shown, show_statistics, skip_correct_answers, use_lm_stylesheets, question_culture, answer_culture)" +
 							  "VALUES(@snooze_options_id, @multiple_choice_options_id, @query_types_id, @type_gradings_id, @synonym_gradings_id, @query_directions_id, " +
-							  "@card_styles_id, @boxes_id, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'en', 'en'); SELECT @@IDENTITY";
+							  "@card_styles_id, @boxes_id, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 'en', 'en'); SELECT @@IDENTITY";
 			cmd.Parameters.Add("@snooze_options_id", snoozeOptionsId);
 			cmd.Parameters.Add("@multiple_choice_options_id", multipleChoiceOptionsId);
 			cmd.Parameters.Add("@query_types_id", queryTypesId);

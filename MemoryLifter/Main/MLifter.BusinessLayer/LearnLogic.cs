@@ -147,7 +147,8 @@ namespace MLifter.BusinessLayer
 				lls.CardsID = card.Card.Id;
 				lls.SessionID = Log.LastSessionID;
 				lls.Answer = card.UserAnswer;
-				lls.CaseSensitive = card.ParentDictionary.Settings.CaseSensitive;
+                lls.CaseSensitive = card.ParentDictionary.Settings.CaseSensitive;
+                lls.IgnoreAccentChars = card.ParentDictionary.Settings.IgnoreAccentChars;
 				lls.CorrectOnTheFly = card.ParentDictionary.Settings.CorrectOnTheFly;
 				lls.Direction = card.QueryDirection;
 				lls.Duration = ((TimeSpan)(DateTime.Now.Subtract(card.CardAsked))).Seconds;

@@ -364,6 +364,7 @@ namespace MLifter.Controls.LearningWindow
                     multiPaneControlMain.SelectedPage = multiPanePageMainTextbox;
                     mLifterTextBox.IgnoreChars = e.dictionary.Settings.StripChars;
                     mLifterTextBox.CaseSensitive = e.dictionary.Settings.CaseSensitive.Value;
+                    mLifterTextBox.IgnoreAccentChars = e.dictionary.Settings.IgnoreAccentChars.Value;
                     mLifterTextBox.CorrectOnTheFly = e.dictionary.Settings.CorrectOnTheFly.Value;
 
                     mLifterTextBox.Synonyms = (e.dictionary.LearnMode == BusinessLayer.LearnModes.Sentence ? card.CurrentAnswerExample : card.CurrentAnswer).ToStringList();

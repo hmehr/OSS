@@ -1,0 +1,9 @@
+dll
+pdb
+exe
+png
+cache
+bin/
+release/
+debug/
+obj/

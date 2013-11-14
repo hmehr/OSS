@@ -229,6 +229,10 @@ namespace MLifter.DAL.Interfaces
 		/// Display statistics.
 		/// </summary>
 		Stats = 4,
+        /// <summary>
+        /// Typed answers should be ignored if accented.
+        /// </summary>
+        IgnoreAccentChars = 8,
 		/// <summary>
 		/// Display images.
 		/// </summary>

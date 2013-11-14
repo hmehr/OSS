@@ -840,10 +840,10 @@ namespace MLifterTest.DAL
                 {
                     cmd.CommandText = "INSERT INTO \"Settings\"" +
                                       "(snooze_options, multiple_choice_options, query_types, type_gradings, synonym_gradings, query_directions, cardstyle, boxes, " +
-                                      "autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
+                                      "autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
                                       "show_images, stripchars, auto_boxsize, pool_empty_message_shown, show_statistics, skip_correct_answers, use_lm_stylesheets)" +
                                       "VALUES(@snooze_options_id, @multiple_choice_options_id, @query_types_id, @type_gradings_id, @synonym_gradings_id, @query_directions_id, " +
-                                        "@card_styles_id, @boxes_id, 1, 0, 0, 0, 0, 0, 1, 0, 1, @stripchars, 0, 0, 1, 0, 0);";
+                                        "@card_styles_id, @boxes_id, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, @stripchars, 0, 0, 1, 0, 0);";
                     cmd.Parameters.Add("@snooze_options_id", snoozeOptionsId);
                     cmd.Parameters.Add("@multiple_choice_options_id", multipleChoiceOptionsId);
                     cmd.Parameters.Add("@query_types_id", queryTypesId);
@@ -981,10 +981,10 @@ namespace MLifterTest.DAL
                 {
                     cmd.CommandText = "INSERT INTO \"Settings\"" +
                                       "(snooze_options, multiple_choice_options, query_types, type_gradings, synonym_gradings, query_directions, cardstyle, boxes, " +
-                                      "autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
+                                      "autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, " +
                                       "show_images, stripchars, auto_boxsize, pool_empty_message_shown, show_statistics, skip_correct_answers, use_lm_stylesheets)" +
                                       "VALUES(@snooze_options_id, @multiple_choice_options_id, @query_types_id, @type_gradings_id, @synonym_gradings_id, @query_directions_id, " +
-                                      "@card_styles_id, @boxes_id, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);";
+                                      "@card_styles_id, @boxes_id, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);";
                     cmd.Parameters.Add("@snooze_options_id", snoozeOptionsId);
                     cmd.Parameters.Add("@multiple_choice_options_id", multipleChoiceOptionsId);
                     cmd.Parameters.Add("@query_types_id", queryTypesId);

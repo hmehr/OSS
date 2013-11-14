@@ -377,6 +377,7 @@ namespace MLifter.BusinessLayer
             syncAgent.Configuration.SyncParameters.Add("answer", string.Empty);
             syncAgent.Configuration.SyncParameters.Add("direction", -1);
             syncAgent.Configuration.SyncParameters.Add("case_sensitive", false);
+            syncAgent.Configuration.SyncParameters.Add("ignore_accent_chars", false);
             syncAgent.Configuration.SyncParameters.Add("correct_on_the_fly", false);
             syncAgent.Configuration.SyncParameters.Add("percentage_known", -1);
             syncAgent.Configuration.SyncParameters.Add("percentage_required", -1);

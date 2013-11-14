@@ -227,6 +227,23 @@ namespace MLifter.DAL.Preview
 			}
 		}
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [Ignore Accent Chars].
+        /// </summary>
+        /// <value><c>true</c> if [Ignore Accent Chars]; otherwise, <c>false</c>.</value>
+        /// <remarks>Documented by Dev03, 2013-11-12</remarks>
+        public bool? IgnoreAccentChars
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
 		/// <summary>
 		/// Gets or sets a value indicating whether user confirmation is required to confirm demote.
 		/// </summary>
@@ -663,7 +680,8 @@ namespace MLifter.DAL.Preview
 		}
 
 		#endregion
-	}
+
+    }
 
 	/// <summary>
 	/// This is a container object which is used to contain the preview snooze options.

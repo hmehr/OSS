@@ -278,6 +278,21 @@ namespace MLifter.DAL.XML
             }
         }
 
+        public bool? IgnoreAccentChars
+        {
+            get
+            {
+                return Check(EQueryOption.IgnoreAccentChars);
+            }
+            set
+            {
+                if (value.GetValueOrDefault())
+                    Set(EQueryOption.IgnoreAccentChars);
+                else
+                    Unset(EQueryOption.IgnoreAccentChars);
+            }
+        }
+
         public bool? ConfirmDemote
         {
             get
@@ -937,6 +952,19 @@ namespace MLifter.DAL.XML
         }
 
         [IgnoreCopy]
+        public bool? IgnoreAccentChars
+        {
+            get
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+            set
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+        }
+
+        [IgnoreCopy]
         public bool? ConfirmDemote
         {
             get
@@ -1440,6 +1468,19 @@ namespace MLifter.DAL.XML
         }
 
         [IgnoreCopy]
+        public bool? IgnoreAccentChars
+        {
+            get
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+            set
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+        }
+
+        [IgnoreCopy]
         public bool? ConfirmDemote
         {
             get
@@ -1906,6 +1947,19 @@ namespace MLifter.DAL.XML
         }
 
         [IgnoreCopy]
+        public bool? IgnoreAccentChars
+        {
+            get
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+            set
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+        }
+
+        [IgnoreCopy]
         public bool? ConfirmDemote
         {
             get
@@ -2358,6 +2412,19 @@ namespace MLifter.DAL.XML
 
         [IgnoreCopy]
         public bool? CaseSensitive
+        {
+            get
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+            set
+            {
+                throw new Exception("The method or operation is not implemented.");
+            }
+        }
+
+        [IgnoreCopy]
+        public bool? IgnoreAccentChars
         {
             get
             {

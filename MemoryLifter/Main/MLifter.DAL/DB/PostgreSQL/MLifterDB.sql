@@ -1,6 +1,6 @@
 ﻿-- to ensure to get a clean database to first manualy delete and recreate the "memorylifter" database:
--- DROP DATABASE IF EXISTS memorylifter;
--- CREATE DATABASE memorylifter;
+DROP DATABASE IF EXISTS memorylifter;
+CREATE DATABASE memorylifter;
  
 -- should clean the whole database
 DROP SCHEMA IF EXISTS public CASCADE;
@@ -9,7 +9,7 @@ CREATE SCHEMA public;
 -- update trigger function
 CREATE OR REPLACE FUNCTION update_trigger() RETURNS trigger AS $$
 BEGIN
-	NEW.update_timestamp := now();
+	NEW.update_timestamp := now();//
 	If NEW.update_originator_id = OLD.update_originator_id THEN
 		NEW.update_originator_id := 0;
 	END IF;
@@ -67,7 +67,7 @@ CREATE OR REPLACE FUNCTION "CreateNewSetting"()
 			(null, null, null, null, null, null, null, null, null);
 
 		INSERT INTO "Settings"
-			(snooze_options, query_types, query_directions, multiple_choice_options, synonym_gradings, type_gradings, cardstyle, boxes, autoplay_audio, case_sensitive, confirm_demote, 
+			(snooze_options, query_types, query_directions, multiple_choice_options, synonym_gradings, type_gradings, cardstyle, boxes, autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, 
 			enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, show_images, stripchars, auto_boxsize, pool_empty_message_shown, 
 			show_statistics, skip_correct_answers, use_lm_stylesheets, question_culture, answer_culture)
 			VALUES
@@ -80,7 +80,7 @@ CREATE OR REPLACE FUNCTION "CreateNewSetting"()
 				currval('"TypeGradings_id_seq"'),
 				currval('"CardStyles_id_seq"'),
 				currval('"Boxes_id_seq"'),
-				null, null , null,
+				null, null , null, null,
 				null, null, null, null, null, null, null, null, null,
 				null, null, null, 'en', 'en'
 			);
@@ -494,6 +494,7 @@ CREATE TABLE "Settings" (
 	id serial PRIMARY KEY NOT NULL,
 	autoplay_audio boolean,
 	case_sensitive boolean,
+	ignore_accent_chars boolean,
 	confirm_demote boolean,
 	enable_commentary boolean,
 	correct_on_the_fly boolean,
@@ -1719,6 +1720,7 @@ CREATE TABLE "LearnLog" (
 	answer text,
 	direction direction,
 	case_sensitive boolean,
+	ignore_accent_chars boolean,
 	correct_on_the_fly boolean,
 	percentage_known integer,
 	percentage_required integer,
@@ -1944,7 +1946,7 @@ CREATE OR REPLACE FUNCTION "CreateNewLearningModule"(character, integer, text)
 			(10, 20, 50, 100, 250, 500, 1000, 2000, 4000);
 
 		INSERT INTO "Settings"
-			(snooze_options, query_types, query_directions, multiple_choice_options, synonym_gradings, type_gradings, boxes, autoplay_audio, case_sensitive, confirm_demote, 
+			(snooze_options, query_types, query_directions, multiple_choice_options, synonym_gradings, type_gradings, boxes, autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, 
 			enable_commentary, correct_on_the_fly, enable_timer, random_pool, self_assessment, show_images, stripchars, auto_boxsize, pool_empty_message_shown, 
 			show_statistics, skip_correct_answers, use_lm_stylesheets, question_culture, answer_culture)
 			VALUES
@@ -1956,7 +1958,7 @@ CREATE OR REPLACE FUNCTION "CreateNewLearningModule"(character, integer, text)
 				currval('"SynonymGradings_id_seq"'),
 				currval('"TypeGradings_id_seq"'),
 				currval('"Boxes_id_seq"'),
-				TRUE, FALSE, FALSE,
+				TRUE, FALSE, FALSE, FALSE,
 				FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, '!,.?;', FALSE, FALSE,
 				TRUE, FALSE, TRUE, 'en', 'en'
 			);
@@ -2035,6 +2037,7 @@ $$ LANGUAGE 'plpgsql' SECURITY DEFINER;
 DROP TYPE IF EXISTS "AllSettings" CASCADE;
 CREATE TYPE "AllSettings" AS (autoplay_audio boolean, 
 			      case_sensitive boolean,
+			      ignore_accent_chars boolean,
 			      confirm_demote boolean,
 			      enable_commentary boolean,
 			      correct_on_the_fly boolean,
@@ -2128,7 +2131,7 @@ CREATE OR REPLACE FUNCTION "GetAllSettings"(settings_id integer) RETURNS "AllSet
 	DECLARE
 	   result "AllSettings";
 	BEGIN
-		SELECT 	"Settings".autoplay_audio, "Settings".case_sensitive, "Settings".confirm_demote, "Settings".enable_commentary, "Settings".correct_on_the_fly, "Settings".enable_timer, "Settings".synonym_gradings,
+		SELECT 	"Settings".autoplay_audio, "Settings".case_sensitive,"Settings".ignore_accent_chars, "Settings".confirm_demote, "Settings".enable_commentary, "Settings".correct_on_the_fly, "Settings".enable_timer, "Settings".synonym_gradings,
 			"Settings".type_gradings, "Settings".multiple_choice_options, "Settings".query_directions, "Settings".query_types, 
 			"Settings".random_pool,	"Settings".self_assessment, "Settings".show_images, "Settings".stripchars, "Settings".question_culture, "Settings".answer_culture, "Settings".question_caption,
 			"Settings".answer_caption, "Settings".logo, "Settings".auto_boxsize, "Settings".pool_empty_message_shown, "Settings".show_statistics, "Settings".skip_correct_answers, "Settings".snooze_options, 

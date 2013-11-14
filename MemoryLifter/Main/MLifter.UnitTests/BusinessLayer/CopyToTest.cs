@@ -433,6 +433,7 @@ namespace MLifterTest.BusinessLayer
                 Assert.AreEqual<bool?>(one.AutoBoxSize, two.AutoBoxSize, "AutoBoxSize do not match");
                 Assert.AreEqual<bool?>(one.AutoplayAudio, two.AutoplayAudio, "AutoplayAudio do not match");
                 Assert.AreEqual<bool?>(one.CaseSensitive, two.CaseSensitive, "CaseSensitive do not match");
+                Assert.AreEqual<bool?>(one.IgnoreAccentChars, two.IgnoreAccentChars, "IgnoreAccentChars do not match");
                 Assert.AreEqual<bool?>(one.ConfirmDemote, two.ConfirmDemote, "ConfirmDemote do not match");
                 Assert.AreEqual<bool?>(one.CorrectOnTheFly, two.CorrectOnTheFly, "CorrectOnTheFly do not match");
                 Assert.AreEqual<bool?>(one.EnableCommentary, two.EnableCommentary, "EnableCommentary do not match");

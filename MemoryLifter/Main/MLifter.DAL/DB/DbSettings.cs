@@ -166,6 +166,18 @@ namespace MLifter.DAL.DB
             }
         }
 
+        public bool? IgnoreAccentChars
+        {
+            get
+            {
+                return connector.GetIgnoreAccentChars(id);
+            }
+            set
+            {
+                connector.SetIgnoreAccentChars(id, value);
+            }
+        }
+
         public bool? ConfirmDemote
         {
             get

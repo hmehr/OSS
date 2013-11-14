@@ -110,6 +110,10 @@ namespace MLifter.DAL.Interfaces.DB
 		/// Was case sensitivity enabled?
 		/// </summary>
 		public bool? CaseSensitive;
+        /// <summary>
+        /// Was ignore accented chars enabled?
+        /// </summary>
+        public bool? IgnoreAccentChars;
 		/// <summary>
 		/// Was correct on the fly enabled?
 		/// </summary>

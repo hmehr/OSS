@@ -319,6 +319,7 @@ namespace MLifter.BusinessLayer
             List<string> lcInputAnswers = new List<string>();
             List<string> lcCorrectAnswers = new List<string>();
             bool caseSensitive = (bool)dictionary.Settings.CaseSensitive;
+            bool ignoreAccentChars = (bool)dictionary.Settings.IgnoreAccentChars;
             if (!caseSensitive)
             {
                 inputAnswers.ForEach(a => lcInputAnswers.Add(a.ToLower()));

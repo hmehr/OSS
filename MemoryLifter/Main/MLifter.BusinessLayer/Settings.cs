@@ -171,6 +171,18 @@ namespace MLifter.BusinessLayer
             }
         }
 
+        public bool? IgnoreAccentChars
+        {
+            get
+            {
+                return userSettings.IgnoreAccentChars ?? defaultSettings.IgnoreAccentChars;
+            }
+            set
+            {
+                userSettings.IgnoreAccentChars = value;
+            }
+        }
+
         public bool? ConfirmDemote
         {
             get

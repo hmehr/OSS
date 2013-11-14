@@ -95,6 +95,8 @@ namespace MLifterSettingsManager.DAL
 
         public bool? CaseSensitive { get; set; }
 
+        public bool? IgnoreAccentChars { get; set; }
+
         public bool? ConfirmDemote { get; set; }
 
         public bool? EnableCommentary { get; set; }

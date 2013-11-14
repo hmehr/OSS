@@ -664,6 +664,19 @@ namespace MLifterTest.BusinessLayer
                     Assert.AreNotEqual<bool?>(defaultSettings.CaseSensitive, userSettings.CaseSensitive, "Usersettings saved to default settings!");
 
                     #endregion
+                    # region testing IgnoreAccentChars
+
+                    CleanProperties(defaultSettings);
+                    CleanProperties(userSettings);
+
+                    defaultSettings.IgnoreAccentChars = tstBool;
+                    Assert.AreEqual<bool?>(tstBool, settings.IgnoreAccentChars, "Property not read correctly!");
+                    Assert.AreEqual(null, userSettings.IgnoreAccentChars, "Usersetting is not untouched!");
+                    userSettings.CaseSensitive = tstUsrBool;
+                    Assert.AreEqual<bool?>(tstUsrBool, settings.IgnoreAccentChars, "Property not read correctly!");
+                    Assert.AreNotEqual<bool?>(defaultSettings.IgnoreAccentChars, userSettings.IgnoreAccentChars, "Usersettings saved to default settings!");
+
+                    #endregion
                     # region testing ConfirmDemote
 
                     CleanProperties(defaultSettings);

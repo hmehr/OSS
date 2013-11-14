@@ -69,6 +69,7 @@ namespace MLifter.DAL.DB.PostgreSQL
                     //read the values
                     bool? autoplayAudio = DbValueConverter.Convert<bool>(reader["autoplay_audio"]);
                     bool? caseSensitive = DbValueConverter.Convert<bool>(reader["case_sensitive"]);
+                    bool? ignoreAccentChars = DbValueConverter.Convert<bool>(reader["ignore_accent_chars"]);
                     bool? confirmDemote = DbValueConverter.Convert<bool>(reader["confirm_demote"]);
                     bool? enableCommentary = DbValueConverter.Convert<bool>(reader["enable_commentary"]);
                     bool? correctOnTheFly = DbValueConverter.Convert<bool>(reader["correct_on_the_fly"]);
@@ -105,6 +106,7 @@ namespace MLifter.DAL.DB.PostgreSQL
                     DateTime expires = DateTime.Now.Add(Cache.DefaultSettingsValidationTime);
                     Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsAutoPlayAudio, settingsId, expires)] = autoplayAudio;
                     Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsCaseSensetive, settingsId, expires)] = caseSensitive;
+                    Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsIgnoreAccentChars, settingsId, expires)] = ignoreAccentChars;
                     Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsConfirmDemote, settingsId, expires)] = confirmDemote;
                     Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsEnableCommentary, settingsId, expires)] = enableCommentary;
                     Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsCorrectOnTheFly, settingsId, expires)] = correctOnTheFly;
@@ -141,6 +143,7 @@ namespace MLifter.DAL.DB.PostgreSQL
                     {
                         case CacheObject.SettingsAutoPlayAudio: cacheValue = autoplayAudio; break;
                         case CacheObject.SettingsCaseSensetive: cacheValue = caseSensitive; break;
+                        case CacheObject.SettingsIgnoreAccentChars: cacheValue = ignoreAccentChars; break;
                         case CacheObject.SettingsConfirmDemote: cacheValue = confirmDemote; break;
                         case CacheObject.SettingsEnableCommentary: cacheValue = enableCommentary; break;
                         case CacheObject.SettingsCorrectOnTheFly: cacheValue = correctOnTheFly; break;
@@ -1065,6 +1068,32 @@ namespace MLifter.DAL.DB.PostgreSQL
             }
         }
 
+        public bool? GetIgnoreAccentChars(int id)
+        {
+            object cacheValue;
+            if (!SettingsCached(id, CacheObject.SettingsIgnoreAccentChars, out cacheValue))      //if settings are not in Cache --> load them
+                GetSettingsValue(id, CacheObject.SettingsIgnoreAccentChars, out cacheValue);    //Saves the current Settings from the DB to the Cache
+            return cacheValue as bool?;
+        }
+
+
+        public void SetIgnoreAccentChars(int id, bool? IgnoreAccentChars)
+        {
+            using (NpgsqlConnection con = PostgreSQLConn.CreateConnection(Parent.CurrentUser))
+            {
+                using (NpgsqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE \"Settings\" SET ignore_accent_chars=:value WHERE id=:id";
+                    cmd.Parameters.Add("id", id);
+                    cmd.Parameters.Add("value", IgnoreAccentChars);
+
+                    PostgreSQLConn.ExecuteNonQuery(cmd, Parent.CurrentUser);
+
+                    //Save to cache
+                    Parent.CurrentUser.Cache[ObjectLifetimeIdentifier.Create(CacheObject.SettingsIgnoreAccentChars, id, Cache.DefaultSettingsValidationTime)] = IgnoreAccentChars;
+                }
+            }
+        }
         public bool? GetConfirmDemote(int id)
         {
             object cacheValue;

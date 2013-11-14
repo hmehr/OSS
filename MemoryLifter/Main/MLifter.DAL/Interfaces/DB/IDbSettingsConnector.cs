@@ -50,6 +50,9 @@ namespace MLifter.DAL.Interfaces.DB
         bool? GetCaseSensitive(int id);
         void SetCaseSensitive(int id, bool? CaseSensetive);
 
+        bool? GetIgnoreAccentChars(int id);
+        void SetIgnoreAccentChars(int id, bool? IgnoreAccentChars);
+
         Dictionary<CommentarySoundIdentifier, IMedia> GetCommentarySounds(int id);
         void SetCommentarySounds(int id, Dictionary<CommentarySoundIdentifier, IMedia> CommentarySounds);
 

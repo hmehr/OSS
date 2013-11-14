@@ -242,6 +242,7 @@ namespace MLifterSyncService
             syncSchema.Tables["Settings"].PrimaryKey = new string[] { "id" };
             syncSchema.Tables["Settings"].Columns.Add("autoplay_audio").DataType = typeof(bool);
             syncSchema.Tables["Settings"].Columns.Add("case_sensitive").DataType = typeof(bool);
+            syncSchema.Tables["Settings"].Columns.Add("ignore_accent_chars").DataType = typeof(bool);
             syncSchema.Tables["Settings"].Columns.Add("confirm_demote").DataType = typeof(bool);
             syncSchema.Tables["Settings"].Columns.Add("enable_commentary").DataType = typeof(bool);
             syncSchema.Tables["Settings"].Columns.Add("correct_on_the_fly").DataType = typeof(bool);
@@ -743,6 +744,7 @@ namespace MLifterSyncService
             syncSchema.Tables["LearnLog"].Columns.Add("direction").DataType = typeof(string);
             syncSchema.Tables["LearnLog"].Columns["direction"].MaxLength = 100;
             syncSchema.Tables["LearnLog"].Columns.Add("case_sensitive").DataType = typeof(bool);
+            syncSchema.Tables["LearnLog"].Columns.Add("ignore_accent_chars").DataType = typeof(bool);
             syncSchema.Tables["LearnLog"].Columns.Add("correct_on_the_fly").DataType = typeof(bool);
             syncSchema.Tables["LearnLog"].Columns.Add("percentage_known").DataType = typeof(int);
             syncSchema.Tables["LearnLog"].Columns.Add("percentage_required").DataType = typeof(int);
@@ -1495,7 +1497,7 @@ namespace MLifterSyncService
             # region incremental insert command
             NpgsqlCommand incInsSettingsCmd = new NpgsqlCommand();
             incInsSettingsCmd.CommandType = CommandType.Text;
-            incInsSettingsCmd.CommandText = "SELECT id, autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, synonym_gradings, " +
+            incInsSettingsCmd.CommandText = "SELECT id, autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, synonym_gradings, " +
                                                 "type_gradings, multiple_choice_options, query_directions, query_types, random_pool, self_assessment, show_images, stripchars, " +
                                                 "question_culture, answer_culture, question_caption, answer_caption, logo, question_stylesheet, answer_stylesheet, auto_boxsize, " +
                                                 "pool_empty_message_shown, show_statistics, skip_correct_answers, snooze_options, use_lm_stylesheets, cardstyle, boxes, isCached " +
@@ -1516,7 +1518,7 @@ namespace MLifterSyncService
             # endregion
             # region incremental update command
             NpgsqlCommand incUpdSettingsCmd = incInsSettingsCmd.Clone();
-            incUpdSettingsCmd.CommandText = "SELECT id, autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, synonym_gradings, " +
+            incUpdSettingsCmd.CommandText = "SELECT id, autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, synonym_gradings, " +
                                                 "type_gradings, multiple_choice_options, query_directions, query_types, random_pool, self_assessment, show_images, stripchars, " +
                                                 "question_culture, answer_culture, question_caption, answer_caption, logo, question_stylesheet, answer_stylesheet, auto_boxsize, " +
                                                 "pool_empty_message_shown, show_statistics, skip_correct_answers, snooze_options, use_lm_stylesheets, cardstyle, boxes, isCached " +
@@ -1552,11 +1554,11 @@ namespace MLifterSyncService
             # endregion
             # region insert command
             NpgsqlCommand insSettingsCmd = incInsSettingsCmd.Clone();
-            insSettingsCmd.CommandText = "INSERT INTO \"Settings\" (id, autoplay_audio, case_sensitive, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, synonym_gradings, " +
+            insSettingsCmd.CommandText = "INSERT INTO \"Settings\" (id, autoplay_audio, case_sensitive,ignore_accent_chars, confirm_demote, enable_commentary, correct_on_the_fly, enable_timer, synonym_gradings, " +
                                           "type_gradings, multiple_choice_options, query_directions, query_types, random_pool, self_assessment, show_images, stripchars, " +
                                           "question_culture, answer_culture, question_caption, answer_caption, logo, question_stylesheet, answer_stylesheet, auto_boxsize, " +
                                           "pool_empty_message_shown, show_statistics, skip_correct_answers, snooze_options, use_lm_stylesheets, cardstyle, boxes, isCached, update_originator_id) " +
-                                        "VALUES (:id, :autoplay_audio, :case_sensitive, :confirm_demote, :enable_commentary, :correct_on_the_fly, :enable_timer, :synonym_gradings, " +
+                                        "VALUES (:id, :autoplay_audio, :case_sensitive,:ignore_accent_chars, :confirm_demote, :enable_commentary, :correct_on_the_fly, :enable_timer, :synonym_gradings, " +
                                           ":type_gradings, :multiple_choice_options, :query_directions, :query_types, :random_pool, :self_assessment, :show_images, :stripchars, " +
                                           ":question_culture, :answer_culture, :question_caption, :answer_caption, :logo, :question_stylesheet, :answer_stylesheet, :auto_boxsize, " +
                                           ":pool_empty_message_shown, :show_statistics, :skip_correct_answers, :snooze_options, :use_lm_stylesheets, :cardstyle, :boxes, isCached, :" + SyncSession.SyncClientIdHash + ");";
@@ -1564,6 +1566,7 @@ namespace MLifterSyncService
             insSettingsCmd.Parameters.Add("id", NpgsqlDbType.Integer);
             insSettingsCmd.Parameters.Add("autoplay_audio", NpgsqlDbType.Boolean);
             insSettingsCmd.Parameters.Add("case_sensitive", NpgsqlDbType.Boolean);
+            insSettingsCmd.Parameters.Add("ignore_accent_chars", NpgsqlDbType.Boolean);
             insSettingsCmd.Parameters.Add("confirm_demote", NpgsqlDbType.Boolean);
             insSettingsCmd.Parameters.Add("enable_commentary", NpgsqlDbType.Boolean);
             insSettingsCmd.Parameters.Add("correct_on_the_fly", NpgsqlDbType.Boolean);
@@ -1597,7 +1600,7 @@ namespace MLifterSyncService
             # endregion
             # region update command
             NpgsqlCommand updSettingsCmd = incInsSettingsCmd.Clone();
-            updSettingsCmd.CommandText = "UPDATE \"Settings\" SET autoplay_audio=:autoplay_audio, case_sensitive=:case_sensitive, confirm_demote=:confirm_demote, enable_commentary=:enable_commentary, " +
+            updSettingsCmd.CommandText = "UPDATE \"Settings\" SET autoplay_audio=:autoplay_audio, case_sensitive=:case_sensitive,ignore_accent_chars=:ignore_accent_chars, confirm_demote=:confirm_demote, enable_commentary=:enable_commentary, " +
                                             "correct_on_the_fly=:correct_on_the_fly, enable_timer=:enable_timer, synonym_gradings=:synonym_gradings, type_gradings=:type_gradings, " +
                                             "multiple_choice_options=:multiple_choice_options, query_directions=:query_directions, query_types=:query_types, random_pool=:random_pool, " +
                                             "random_pool=:random_pool, show_images=:show_images, stripchars=:stripchars, question_culture:=question_culture, answer_culture:=answer_culture, " +
@@ -1609,6 +1612,7 @@ namespace MLifterSyncService
             updSettingsCmd.Parameters.Add("id", NpgsqlDbType.Integer);
             updSettingsCmd.Parameters.Add("autoplay_audio", NpgsqlDbType.Boolean);
             updSettingsCmd.Parameters.Add("case_sensitive", NpgsqlDbType.Boolean);
+            updSettingsCmd.Parameters.Add("ignore_accent_chars", NpgsqlDbType.Boolean);
             updSettingsCmd.Parameters.Add("confirm_demote", NpgsqlDbType.Boolean);
             updSettingsCmd.Parameters.Add("enable_commentary", NpgsqlDbType.Boolean);
             updSettingsCmd.Parameters.Add("correct_on_the_fly", NpgsqlDbType.Boolean);
@@ -3309,7 +3313,7 @@ namespace MLifterSyncService
             NpgsqlCommand incInsLearnLogCmd = new NpgsqlCommand();
             incInsLearnLogCmd.CommandType = CommandType.Text;
             incInsLearnLogCmd.CommandText = "SELECT ST.id, ST.user_id, ST.lm_id, session_id, cards_id, old_box, new_box, timestamp, duration, learn_mode, move_type, " +
-                                          "answer, direction, case_sensitive, correct_on_the_fly, percentage_known, percentage_required " +
+                                          "answer, direction, case_sensitive,ignore_accent_chars, correct_on_the_fly, percentage_known, percentage_required " +
                                           "FROM \"LearnLog\" AS ST INNER JOIN \"LearningSessions\" AS S ON ST.session_id=S.id " +
                                           "WHERE ST.create_timestamp is null OR (  ST.create_timestamp > :" + SyncSession.SyncLastReceivedAnchor + " " +
                                           "and ST.create_timestamp <= :" + SyncSession.SyncNewReceivedAnchor + " ) " +
@@ -3325,7 +3329,7 @@ namespace MLifterSyncService
             # region incremental update command
             NpgsqlCommand incUpdLearnLogCmd = incInsLearnLogCmd.Clone();
             incUpdLearnLogCmd.CommandText = "SELECT ST.id, ST.user_id, ST.lm_id, session_id, cards_id, old_box, new_box, timestamp, duration, learn_mode, move_type, " +
-                                          "answer, direction, case_sensitive, correct_on_the_fly, percentage_known, percentage_required " +
+                                          "answer, direction, case_sensitive,ignore_accent_chars, correct_on_the_fly, percentage_known, percentage_required " +
                                           "FROM \"LearnLog\" AS ST INNER JOIN \"LearningSessions\" AS S ON ST.session_id=S.id " +
                                           "WHERE (ST.update_timestamp > :" + SyncSession.SyncLastReceivedAnchor + ") " +
                                           "and (ST.update_timestamp <= :" + SyncSession.SyncNewReceivedAnchor + ") " +
@@ -3356,9 +3360,9 @@ namespace MLifterSyncService
             # region insert command
             NpgsqlCommand insLearnLogCmd = incInsLearnLogCmd.Clone();
             insLearnLogCmd.CommandText = "INSERT INTO \"LearnLog\" (session_id, user_id, lm_id, cards_id, old_box, new_box, timestamp, duration, learn_mode, move_type, " +
-                                            "answer, direction, case_sensitive, correct_on_the_fly, percentage_known, percentage_required, update_originator_id) " +
+                                            "answer, direction, case_sensitive,ignore_accent_chars, correct_on_the_fly, percentage_known, percentage_required, update_originator_id) " +
                                         "VALUES (:session_id, :user_id, :lm_id, :cards_id, :old_box, :new_box, :timestamp, :duration, :learn_mode, :move_type, " +
-                                            ":answer, :direction, :case_sensitive, :correct_on_the_fly, :percentage_known, :percentage_required, :" + SyncSession.SyncClientIdHash + ");";
+                                            ":answer, :direction, :case_sensitive,:ignore_accent_chars, :correct_on_the_fly, :percentage_known, :percentage_required, :" + SyncSession.SyncClientIdHash + ");";
             insLearnLogCmd.Parameters.Add(SyncSession.SyncClientIdHash, NpgsqlDbType.Integer);
             insLearnLogCmd.Parameters.Add("session_id", NpgsqlDbType.Integer);
             insLearnLogCmd.Parameters.Add("user_id", NpgsqlDbType.Integer);
@@ -3373,6 +3377,7 @@ namespace MLifterSyncService
             insLearnLogCmd.Parameters.Add("answer", NpgsqlDbType.Text);
             insLearnLogCmd.Parameters.Add("direction", EQueryDirection.Answer2Question.ToString());
             insLearnLogCmd.Parameters.Add("case_sensitive", NpgsqlDbType.Boolean);
+            insLearnLogCmd.Parameters.Add("ignore_accent_chars", NpgsqlDbType.Boolean);
             insLearnLogCmd.Parameters.Add("correct_on_the_fly", NpgsqlDbType.Boolean);
             insLearnLogCmd.Parameters.Add("percentage_known", NpgsqlDbType.Integer);
             insLearnLogCmd.Parameters.Add("percentage_required", NpgsqlDbType.Integer);
@@ -3399,6 +3404,7 @@ namespace MLifterSyncService
             updLearnLogCmd.Parameters.Add("answer", NpgsqlDbType.Text);
             updLearnLogCmd.Parameters.Add("direction", EQueryDirection.Answer2Question.ToString());
             updLearnLogCmd.Parameters.Add("case_sensitive", NpgsqlDbType.Boolean);
+            updLearnLogCmd.Parameters.Add("ignore_accent_chars", NpgsqlDbType.Boolean);
             updLearnLogCmd.Parameters.Add("correct_on_the_fly", NpgsqlDbType.Boolean);
             updLearnLogCmd.Parameters.Add("percentage_known", NpgsqlDbType.Integer);
             updLearnLogCmd.Parameters.Add("percentage_required", NpgsqlDbType.Integer);

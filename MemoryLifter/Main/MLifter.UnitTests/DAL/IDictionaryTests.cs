@@ -463,7 +463,8 @@ namespace MLifterTest.DAL
 				using (IDictionary testLM = TestInfrastructure.GetLMConnection(TestContext, string.Empty, false))
 				{
 					testLM.DefaultSettings.AutoplayAudio = true;
-					testLM.DefaultSettings.CaseSensitive = false;
+                    testLM.DefaultSettings.CaseSensitive = false;
+                    testLM.DefaultSettings.IgnoreAccentChars = false;
 					testLM.DefaultSettings.ConfirmDemote = true;
 					testLM.DefaultSettings.CorrectOnTheFly = false;
 					testLM.DefaultSettings.EnableCommentary = true;
@@ -497,7 +498,8 @@ namespace MLifterTest.DAL
 					testLM.DefaultSettings.StripChars = "StripStringTest";
 
 					Assert.IsTrue(testLM.DefaultSettings.AutoplayAudio.Value);
-					Assert.IsFalse(testLM.DefaultSettings.CaseSensitive.Value);
+                    Assert.IsFalse(testLM.DefaultSettings.CaseSensitive.Value);
+                    Assert.IsFalse(testLM.DefaultSettings.IgnoreAccentChars.Value);
 					Assert.IsTrue(testLM.DefaultSettings.ConfirmDemote.Value);
 					Assert.IsFalse(testLM.DefaultSettings.CorrectOnTheFly.Value);
 					Assert.IsTrue(testLM.DefaultSettings.EnableCommentary.Value);
